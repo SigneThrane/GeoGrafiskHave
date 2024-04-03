@@ -1,13 +1,13 @@
-<template>
-  <div></div>
-</template>
-
-
 <script>
 import db from './firebase/init.js'
 import { collection, addDoc } from 'firebase/firestore'
+import audio from './components/audio.vue'
 
 export default {
+components: {
+  audio,
+
+},
   methods: {
     async createUser() {
       const colRef = collection (db, 'users')
@@ -25,5 +25,11 @@ export default {
     this.createUser()
   }
 }
-
 </script>
+
+
+<template>
+  <div>
+    <audio/>
+  </div>
+</template>
