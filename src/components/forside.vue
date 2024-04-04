@@ -128,7 +128,7 @@
 }
 
 .small-button1 {
-    background-color: rgba(0, 0, 0, 0.2); 
+  background-color: #125F31;
     border-color: white;
     color: white;
     font-size: 15px;
