@@ -5,7 +5,7 @@
 <template>     
     <div class="container">
     <div>
-   <img src="../assets/logo.png" alt="logo" class="centered-image">
+   <img src="../assets/logohvid.png" alt="logo" class="centered-image">
    </div>
       <div class="forside">    
         <div class="text">
