@@ -32,4 +32,15 @@
     margin-top: 0;
     color: white;
 }
+
+.forside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThUwCH1-gIIgKm8cPgsmr8a22aXp4p1usfCf9r3hwxQMDN5VP_rCHy4k5gOvtKM-uaLxU&usqp=CAU');
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust as needed */
+  }
 </style>

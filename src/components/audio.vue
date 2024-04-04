@@ -3,12 +3,11 @@
 </script>
 
 <template>
-    <h1>Audio</h1>
-   </template>
-
+  <div class="audio">
+    <h1 style="color: black;">Audio</h1>
+  </div>
+</template>
 
 <style scoped>
-h1{
-color: aqua;
-}
+
 </style>
