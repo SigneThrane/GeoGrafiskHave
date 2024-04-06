@@ -18,6 +18,7 @@ export default {
   <div>
   <RouterLink to="/forside" style="display: none;"></RouterLink>
   <RouterLink to="/audio" style="display: none;"></RouterLink>
+  <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
   <RouterView></RouterView>
 
   

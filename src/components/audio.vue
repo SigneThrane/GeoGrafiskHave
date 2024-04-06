@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="audio">
     <button class="back-button" onclick="goBack()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
@@ -10,9 +6,15 @@
     <img src="../assets/featured.png" alt="">
     <p>Kina</p>
     <h1>Bagholdsangreb ved den gule flod</h1>
-    
   </div>
+
+  <audio src="/src/assets/songPlaceholder.mp3" controls autoplay></audio>
+  
 </template>
+
+<script setup>
+
+</script>
 
 <style scoped>
 .audio{
@@ -33,10 +35,6 @@ h1, p{
     border-radius: 50px; 
 }
 
-.audio {
-    position: relative;
-}
-
 .back-button {
     position: absolute;
     top: 10px; 
@@ -52,15 +50,5 @@ h1, p{
 .back-button:hover {
     background-color: #696969;
 }
-
-.audio {
-    position: relative;
-}
-
-.audio img {
-    max-width: 100%;
-    height: auto;
-}
-
 
 </style>
