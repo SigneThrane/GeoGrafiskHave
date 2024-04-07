@@ -6,10 +6,9 @@
     <img src="../assets/featured.png" alt="">
     <p>Kina</p>
     <h1>Bagholdsangreb ved den gule flod</h1>
-  </div>
 
-  <audio src="/src/assets/songPlaceholder.mp3" controls autoplay></audio>
-  
+    <audio src="/src/assets/songPlaceholder.mp3" controls autoplay></audio>
+  </div>
 </template>
 
 <script setup>
@@ -20,6 +19,8 @@
 .audio{
   background-color: #343333;
   height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 h1, p{
