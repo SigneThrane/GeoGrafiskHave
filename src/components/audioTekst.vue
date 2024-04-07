@@ -69,6 +69,10 @@ herbarier til Boston i løbet af sin rejse.
   overflow-x: hidden;
 }
 
+h2{
+  font-family: 'stagBold', sans-serif;
+}
+
 .img-container {
   position: relative; 
   width: 100vw;
@@ -108,7 +112,8 @@ herbarier til Boston i løbet af sin rejse.
 }
 
 .text-overlay p {
-  font-size: 1.2em;
+  font-family: open sans;
+  font-size: 1em;
 }
 
 .scrollable-content {
