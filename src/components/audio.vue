@@ -16,40 +16,45 @@
 </script>
 
 <style scoped>
-.audio{
+.audio {
   background-color: #343333;
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
-h1, p{
+h1, p {
   color: #FFFFFF;
   margin-left: 7%;
+  margin-top: -30px; 
+}
+
+p {
+  margin-bottom: 40px; 
 }
 
 .audio p {
-    position: relative;
-    width: 8%;
-    padding: 10px 20px; 
-    border: 2px solid white; 
-    border-radius: 50px; 
+  position: relative;
+  width: 8%;
+  padding: 10px 20px; 
+  border: 2px solid white; 
+  border-radius: 50px; 
 }
 
 .back-button {
-    position: absolute;
-    top: 10px; 
-    left: 10px; 
-    background-color: #404040;
-    border: none;
-    border-radius: 50%;
-    height: 4%;
-    width: 10%;
-    cursor: pointer;
+  position: absolute;
+  top: 14px; 
+  left: 14px; 
+  background-color: #404040;
+  border: none;
+  border-radius: 50%;
+  height: 4%;
+  width: 10%;
+  cursor: pointer;
 }
 
 .back-button:hover {
-    background-color: #696969;
+  background-color: #696969;
 }
 
 </style>
