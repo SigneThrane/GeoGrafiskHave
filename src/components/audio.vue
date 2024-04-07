@@ -184,7 +184,7 @@ h1, p {
   width: 85%;
   margin: 10px auto; 
   font-size: small;
-  font-family: 'stagReg', sans-serif;
+  font-family: open sans;
   color: #848484;
 }
 

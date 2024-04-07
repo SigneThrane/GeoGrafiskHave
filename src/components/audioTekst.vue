@@ -3,11 +3,7 @@
     <div class="img-container">
       <img class="blur-img" src="/src/assets/Bagholdsangreb.jpg" alt="">
       <div class="color-overlay"></div>
-      <button class="back-button" @click="goBack">
-        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="white" class="bi bi-arrow-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
-        </svg>
-      </button>
+      <button class="back-button" @click="goBack"></button>
     </div>
     <div class="text-overlay">
       <h2>Bagholdsangreb ved den gule flod</h2>
@@ -125,11 +121,16 @@ h2{
   position: absolute;
   top: 14px; 
   left: 14px; 
-  background-color: #848484;
+  background-color: #404040;
   border: none;
   border-radius: 50%;
+  height: 4%;
+  width: 10%;
   cursor: pointer;
-  z-index: 3; 
+  background-image: url('/src/assets/ToggleButton.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 45%; 
 }
 
 .back-button:hover {
