@@ -30,10 +30,9 @@
 
     <button id="skipForwardButton" class="icon-button-forward"></button>
 
-    <router-link to="/audioTekst" class="router-link">
+    <router-link to="/audioTekst">
       <button id="textButton" class="icon-button-text"></button>
     </router-link>
-
   </div>
 </div>
   </div>
@@ -205,8 +204,8 @@ h1, p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 17px;
-  margin-top: -10px; 
+  margin-right: 15px;
+  margin-top: -24px; 
 }
 
 .icon-button-text {
@@ -241,4 +240,5 @@ h1, p {
   background-position: center; 
   background-size: 85%; 
 }
+
 </style>
