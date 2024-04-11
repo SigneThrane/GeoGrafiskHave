@@ -48,7 +48,7 @@ William Purdom var på et utal af ekspeditioner
 til Kina og den tibetanske region Amdo. 
 Han sendte over 550 pakker frø og tusindvis
  af tørrede og nøje dokumenterede 
-herbarier til Boston i løbet af sin rejse. S
+herbarier til Boston i løbet af sin rejse. 
 
         </p>
       </div>
