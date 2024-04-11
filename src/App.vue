@@ -1,7 +1,7 @@
 
 <script>
 import db from './firebase/init.js'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import forside from './components/forside.vue'
 
 export default {

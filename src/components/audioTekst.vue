@@ -3,7 +3,9 @@
     <div class="img-container">
       <img class="blur-img" src="/src/assets/Bagholdsangreb.jpg" alt="">
       <div class="color-overlay"></div>
-      <button class="back-button" @click="goBack"></button>
+      <router-link to="/audio">
+        <button class="back-button"></button>
+    </router-link>
     </div>
     <div class="text-overlay">
       <h2>Bagholdsangreb ved den gule flod</h2>

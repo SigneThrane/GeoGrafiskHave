@@ -19,17 +19,21 @@
     <button id="skipBackButton" class="icon-button-back"></button>
 
     <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
   </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
     <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
   </svg>
 </button>
 
     <button id="skipForwardButton" class="icon-button-forward"></button>
 
-    <button id="textButton" class="icon-button-text"></button>
+    <router-link to="/audioTekst" class="router-link">
+      <button id="textButton" class="icon-button-text"></button>
+    </router-link>
+
   </div>
 </div>
   </div>
@@ -71,7 +75,8 @@ function changeSpeed() {
 }
 
 
-  audioPlayer.addEventListener('timeupdate', function() {
+audioPlayer.addEventListener('timeupdate', function() {
+  if (!isNaN(audioPlayer.duration)) {
     const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     progressBar.style.width = progress + '%';
 
@@ -80,7 +85,8 @@ function changeSpeed() {
 
     const durationFormatted = formatTime(audioPlayer.duration);
     durationSpan.textContent = durationFormatted;
-  });
+  }
+});
 
   function formatTime(time) {
     const minutes = Math.floor(time / 60);
@@ -199,7 +205,7 @@ h1, p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 17px;
   margin-top: -10px; 
 }
 
@@ -209,6 +215,11 @@ h1, p {
   background-position: center; 
   background-size: 58%; 
 }
+
+.router-link {
+  margin-top: 16px; 
+}
+
 
 .icon-button-forward{
   background-image: url('/src/assets/30_Hvid.png');
