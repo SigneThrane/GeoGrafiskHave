@@ -1,3 +1,16 @@
+
 body{
   background-color: #ffffff;
+  }
+
+  @font-face {
+    font-family: 'stagBold';
+    src: url('/src/assets/Stag Bold.ttf') format('ttf'), 
+  
+  }
+  
+  @font-face {
+    font-family: 'stagReg';
+    src: url('/src/assets/Stag Regular-ttf') format('ttf');
+  
   }
