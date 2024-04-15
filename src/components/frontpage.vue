@@ -32,12 +32,12 @@ const getLocation = () => {
    </div>
       <div class="forside">    
         <div class="text">
-        <p class="overskrift2"> Geografisk Have</p>
+        <p class="overskrift2"> Geographic Garden</p>
       
-        <p class="overskrift">Plantejægerne</p>
+        <p class="overskrift">Planthunters</p>
        
-        <RouterLink to="/map">
-        <button class="big-button" @click="getLocation">Forsæt</button>
+        <RouterLink to="/Mapenglish">
+        <button class="big-button" @click="getLocation">Continue</button>
         </RouterLink>
 
         <div class="small-buttons">
