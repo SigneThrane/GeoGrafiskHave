@@ -23,13 +23,17 @@ const getLocation = () => {
       <div class="forside">    
         <div class="text">
         <p class="overskrift2"> Geografisk Have</p>
-        <hr>
-        <p class="overskrift"> PLANTHUNTERS</p>
-        <hr>
-        <button class="big-button" @click="getLocation">Continue</button>
+      
+        <p class="overskrift">Plantejægerne</p>
+       
+        <button class="big-button" @click="getLocation">Forsæt</button>
         <div class="small-buttons">
-          <button class="small-button1">Dansk</button>
-          <button class="small-button2">Engelsk</button>
+          <button class="small-button1">Dansk <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-globe" viewBox="-4 -4 20 20">
+  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+</svg></button>
+          <button class="small-button2">English <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-globe" viewBox="-4 -4 20 20">
+  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+</svg></button>
         </div>
       </div>
           
@@ -46,7 +50,7 @@ const getLocation = () => {
     position: relative;
     background-image: url(../assets/bg.PNG);
     background-position: center;
-    height: 130vh;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -75,9 +79,9 @@ const getLocation = () => {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 149px;
-    max-height: 150px;
     z-index: 10;
+    width: 45%;
+    height: 20%;
     
   }
 
@@ -88,39 +92,43 @@ const getLocation = () => {
     padding: 10px;
     text-align: center;
     z-index: 1;
+    margin-top: 40px; 
   }
   
   .overskrift {
     text-align: center;
-    font-size: 25px;
-    font-family: 'Trajan Pro 3' , serif;
+    font-size: 40px;
+    font-family: 'stagBold', sans-serif;
     font-weight: regular;
     margin: 0;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);  /* This adds a drop shadow to the text */
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .overskrift2 {
     text-align: center;
-    font-size: 20px;
-    font-family: 'Trajan Pro 3' , serif;
+    font-size: 30px;
+    font-family: 'stagReg';
     font-weight: regular;
     margin: 0;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);  /* This adds a drop shadow to the text */
+    margin-top: 25px; 
 }
   
 
   .big-button {
     margin-top: 3px;
     background-color: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'stagBold', sans-serif;
     font-weight: bold;
     color: #125F31;
-    font-size: 20px;
-  width: 186px;
-  height: 35px;
-  margin-bottom: 10px;
+    font-size: 25px;
+  width: 215px;
+  height: 50px;
+  margin-bottom: 45px;
   border-radius: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
 
@@ -129,41 +137,30 @@ const getLocation = () => {
 .small-buttons {
   display: flex;
   justify-content: center;
-  width: 200px;
-
+  width: 350px;
   
 }
 
 
 .small-button1, .small-button2 {
     margin: 0 10px;  /* This adds 10px of space to the left and right of each button */
+    color: white;
+    background-color: #125F31;
+    border-color: white;
+    font-size: 18px;
+    font-family: 'stagBold', sans-serif;
+    width: 90%;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
   
 }
 
 .small-button1 {
-  background-color: #125F31;
-    border-color: white;
-    color: white;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    width: 90px;
-    height: 30px;
-    border-radius: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
+ margin-left: 5%;
 }
 
 .small-button2 {
-    background-color: #125F31;
-    width: 90px;
-  height: 30px;
-  border-radius: 50px;
-  border-color: white;
-    color: white;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-    width: 90px;
-    height: 30px;
-    border-radius: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
+   
 }
   </style>
