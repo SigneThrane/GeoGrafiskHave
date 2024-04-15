@@ -1,5 +1,18 @@
 <script setup>
+import { ref } from 'vue';
 
+const showPosition = (position) => {
+  console.log("Latitude: " + position.coords.latitude + 
+  ", Longitude: " + position.coords.longitude);  
+}
+
+const getLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+}
 </script>
 
 <template>     
@@ -13,7 +26,7 @@
         <hr>
         <p class="overskrift"> PLANTHUNTERS</p>
         <hr>
-        <button class="big-button">Continue</button>
+        <button class="big-button" @click="getLocation">Continue</button>
         <div class="small-buttons">
           <button class="small-button1">Dansk</button>
           <button class="small-button2">Engelsk</button>
@@ -128,7 +141,7 @@
 }
 
 .small-button1 {
-    background-color: rgba(0, 0, 0, 0.2); 
+  background-color: #125F31;
     border-color: white;
     color: white;
     font-size: 15px;
