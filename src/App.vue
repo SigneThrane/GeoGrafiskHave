@@ -3,6 +3,7 @@
 import db from './firebase/init.js'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import forside from './components/forside.vue'
+import { RouterLink } from 'vue-router';
 
 export default {
   name: 'App',
@@ -19,6 +20,9 @@ export default {
   <RouterLink to="/forside" style="display: none;"></RouterLink>
   <RouterLink to="/audio" style="display: none;"></RouterLink>
   <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
+  <RouterLink to="/Map" style="display: none;"></RouterLink>
+  <RouterLink to="/frontpage" style="display: none;"></RouterLink>
+  <RouterLink to="/Mapenglish" style="display: none;"></RouterLink>
   <RouterView></RouterView>
 
   
