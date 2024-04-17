@@ -242,4 +242,11 @@ h1, p {
   background-position: center; 
   background-size: 85%; 
 }
+
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+
+}
 </style>
