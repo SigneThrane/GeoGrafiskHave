@@ -32,12 +32,12 @@ const getLocation = () => {
    </div>
       <div class="forside">    
         <div class="text">
-        <p class="overskrift2"> Geografisk Have</p>
+        <p class="overskrift2"> Geographic Garden</p>
       
-        <p class="overskrift">Plantejægerne</p>
+        <p class="overskrift">Planthunters</p>
        
-        <RouterLink to="/map">
-        <button class="big-button" @click="getLocation">Forsæt</button>
+        <RouterLink to="/Mapenglish">
+        <button class="big-button" @click="getLocation">Continue</button>
         </RouterLink>
 
         <div class="small-buttons">
@@ -104,6 +104,8 @@ const getLocation = () => {
     
   }
 
+
+  
   .text {
     position: relative;
     padding: 10px;
@@ -179,29 +181,5 @@ const getLocation = () => {
 
 .small-button2 {
    
-}
-
-@media only screen
-and (min-width: 1370px)
-and (max-width: 1605px)
-{ 
-  .container {
-    height: 100vh;
-  }
-
-  .centered-image {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 15%;
-    height: 26%;
-    
-  }
-
-  .container {
-    height: 100vh;
-  }
 }
   </style>
