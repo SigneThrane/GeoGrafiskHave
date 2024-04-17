@@ -104,8 +104,6 @@ const getLocation = () => {
     
   }
 
-
-  
   .text {
     position: relative;
     padding: 10px;
@@ -181,5 +179,29 @@ const getLocation = () => {
 
 .small-button2 {
    
+}
+
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+  .container {
+    height: 100vh;
+  }
+
+  .centered-image {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 15%;
+    height: 26%;
+    
+  }
+
+  .container {
+    height: 100vh;
+  }
 }
   </style>

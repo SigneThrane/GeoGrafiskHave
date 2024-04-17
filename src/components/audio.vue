@@ -247,6 +247,16 @@ h1, p {
 and (min-width: 1370px)
 and (max-width: 1605px)
 { 
+img{
+  height: 70%;
+}
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 15%; 
+}
 
 }
 </style>

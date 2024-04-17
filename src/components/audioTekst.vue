@@ -138,4 +138,28 @@ h2{
 .back-button:hover {
   background-color: #696969;
 }
+
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 30%; 
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+}
 </style>
