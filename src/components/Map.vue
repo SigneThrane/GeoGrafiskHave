@@ -127,47 +127,5 @@ import { ref } from 'vue';
   color: #606060;
   font-family: 'stagBold', sans-serif;
 }
-
-@media only screen
-and (min-width: 1370px)
-and (max-width: 1605px)
-{ 
-  .popUp {
-  height: 20%;
-  width: 100%;
-}
-.popup-img {
-  top: -60%; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18%; 
-  border-radius: 10px; 
-}
-.popUp h2 {
-  top: -305%; 
-  left: 36%;
-}
-
-.map img {
-  transform: scale(1.7) translateX(1%);
-}
-
-#kina {
-  width: 2.5%;
-  right: 37%;
-}
-
-#varighed {
-  left: 34.5%;; 
-}
-
-.popup-info {
-  top: -412%; 
-}
-.map {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-}
 </style>
 
