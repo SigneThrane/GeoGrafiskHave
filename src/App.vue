@@ -10,7 +10,11 @@ export default {
   components: {
       forside,
   },
-
+  methods: {
+    changeLocale(locale) {
+      this.$i18n.locale = locale;
+    },
+  },
 
 }
 </script>
@@ -23,7 +27,7 @@ export default {
   <RouterLink to="/Map" style="display: none;"></RouterLink>
  
   <RouterView></RouterView>
-
+ 
   
 </div>
   
