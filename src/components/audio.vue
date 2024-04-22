@@ -1,6 +1,8 @@
 <template>
   <div class="audio-container">
-    <button class="back-button" onclick="goBack()"> </button>
+    <router-link to="/map">
+      <button class="back-button"> </button>
+    </router-link>
     <img src="../assets/featured.png" alt="">
     <p>Kina</p>
     <h1>Bagholdsangreb ved den gule flod</h1>
@@ -241,4 +243,20 @@ h1, p {
   background-size: 85%; 
 }
 
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+img{
+  height: 70%;
+}
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 15%; 
+}
+
+}
 </style>

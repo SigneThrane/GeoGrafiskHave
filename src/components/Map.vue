@@ -3,11 +3,171 @@ import { ref } from 'vue';
 </script>
 
 <template>
-  <div class="Map">
-    <h1 style="color: black;">Map</h1>
+  <div class="map">
+      <img class="map-img" src="/src/assets/Kort.jpg" alt="">
+  </div>
+  <div class="popUp">
+    <div class="popup-img-container"> 
+      <img class="popup-img" src="/src/assets/imgSmall.png" alt="">
+      <router-link to="/audio">
+        <button id="playPauseButton" class="icon-button-play">
+  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+  </svg></button>
+    </router-link>
+    </div>
+    <h2>Bagholdsangreb ved den gule flod</h2>
+    <div class="popup-info">
+      <p id="varighed">Varighed 2 minutter</p>
+      <p id="kina">Kina</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.map {
+  background-color: #343333;
+  height: 98vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative; 
+}
 
+.map img {
+  transform: scale(5) translateX(-10%);
+}
+
+.popUp {
+  position: absolute; 
+  bottom: 0; 
+  background-color: #343333;
+  padding: 25px; 
+  color: #FFFFFF;
+  height: 18%;
+}
+
+.popup-info {
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 12%;
+  position: relative; 
+  top: -70%; 
+}
+
+.popUp h2, .popUp p {
+  margin: 0;
+  display: inline-block; 
+  color: white;
+  font-family: 'stagBold', sans-serif;
+}
+
+.popUp h2 {
+  margin: 0;
+  display: inline-block; 
+  color: white;
+  position: relative; 
+  top: -45%; 
+}
+.popup-img {
+  position: absolute;
+  top: -30%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%; 
+  border-radius: 10px; 
+  z-index: 1; 
+}
+
+.popup-img-container {
+  width: 40%; 
+  height: 0; 
+  padding-bottom: 40%; 
+  overflow: hidden; 
+  border-radius: 10px; 
+  z-index: 0; 
+}
+
+.icon-button-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -250%);
+  z-index: 2;
+  cursor: pointer;
+  background-color: #125F31; 
+  border: none; 
+  border-radius: 50%; 
+  padding: 0;
+  width: 50px; 
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#kina {
+  position: relative;
+  width: 9%;
+  height: 10%;
+  padding: 10px 20px; 
+  border: 2px solid white; 
+  border-radius: 50px; 
+  font-family: 'stagBold', sans-serif;
+}
+
+#varighed {
+  position: relative;
+  left: -6%; 
+  padding: 10px 20px; 
+  margin-bottom: 20px;
+  color: #606060;
+  font-family: 'stagBold', sans-serif;
+}
+
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+  .popUp {
+  height: 20%;
+  width: 100%;
+}
+.popup-img {
+  top: -60%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%; 
+  border-radius: 10px; 
+}
+.popUp h2 {
+  top: -305%; 
+  left: 36%;
+}
+
+.map img {
+  transform: scale(1.7) translateX(1%);
+}
+
+#kina {
+  width: 2.5%;
+  right: 37%;
+}
+
+#varighed {
+  left: 34.5%;; 
+}
+
+.popup-info {
+  top: -412%; 
+}
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+}
 </style>
+
