@@ -32,15 +32,6 @@ export default createRouter({
       name: 'Map',
       component: Map
     },
-    {
-      path: '/frontpage',
-      name: 'frontpage',
-      component: Frontpage
-    },
-    {
-      path: '/mapenglish',
-      name: 'mapenglish',
-      component: Mapenglish
-    },
+
   ]
 })
