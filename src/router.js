@@ -30,10 +30,6 @@ export default createRouter({
       name: 'Map',
       component: Map
     },
-<<<<<<< HEAD
-
-=======
     
->>>>>>> Test
   ]
 })
