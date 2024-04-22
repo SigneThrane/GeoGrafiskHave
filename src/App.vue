@@ -21,8 +21,7 @@ export default {
   <RouterLink to="/audio" style="display: none;"></RouterLink>
   <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
-  <RouterLink to="/frontpage" style="display: none;"></RouterLink>
-  <RouterLink to="/Mapenglish" style="display: none;"></RouterLink>
+ 
   <RouterView></RouterView>
 
   
