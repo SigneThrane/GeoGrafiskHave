@@ -8,57 +8,54 @@
     </router-link>
     </div>
     <div class="text-overlay">
-      <h2>Bagholdsangreb ved den gule flod</h2>
+     <h2>{{ title }}</h2>
       <div class="scrollable-content">
-        <p>
-          Det var tidlig marts 1912 ved bredden af 
-den gule flod, 700 kilometer syd for Beijing. 
-William Purdom som var plantejæger 
-fra Arnold Arboretums forskningsinstitut 
-og hans tre-mands følge rejste gennem et 
-ødelagt landskab efter Xinhai-revolutionen. 
-Vejene var farlige, fyldt med røvere, 
-men indtil nu havde deres rejse været 
-uden nogen former for besvær.
-
-Men da de nærmede sig deres destination, 
-som var jernbanestationen i Honan, 
-blev de pludselig overfaldet af en gruppe 
-røvere til hest. Skuddene fløj, 
-og to af Williams heste blev dræbt. 
-Røverne var højst sandsynligt ikke klar over 
-hvad Williams store last bestod af, 
-men han var udlænding, havde heste 
-de kunne bytte og så havde han penge 
-for det skulle man bruge for at krydse 
-de forskellige kontrollerede grænser.
-
-Men inden røverne kunne nå at handle yderligere, 
-greb William sit gevær og skød tre af dem 
-og flere af deres heste. 
-Hans følge sluttede sig derefter til kampen, 
-og røverne blev drevet væk. 
-
-Efter dette hæsblæsende scenarie galopperede 
-William og hans mænd til den nærliggende 
-by Shenchow, hvorefter de fortsatte 
-mod Beijing, uden flere forhindringer.
-
-William Purdom var på et utal af ekspeditioner
-til Kina og den tibetanske region Amdo. 
-Han sendte over 550 pakker frø og tusindvis
- af tørrede og nøje dokumenterede 
-herbarier til Boston i løbet af sin rejse. 
-
-        </p>
+        <p>{{ content }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { db } from '../main'; // Ensure the path to main.js is correct
+import { doc, getDoc } from 'firebase/firestore'; // Import Firestore functions
 
+const title = ref('');
+const content = ref('');
+
+onMounted(async () => {
+  try {
+    // Fetch document from 'historieTitel' collection
+    const docRef1 = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
+    const docSnap1 = await getDoc(docRef1);
+    
+    if (docSnap1.exists()) {
+      title.value = docSnap1.data().titelKina;
+    } else {
+      console.log('No such document in historieTitel collection!');
+      title.value = 'Document not found';
+    }
+
+    // Fetch document from 'historier' collection
+    const docRef2 = doc(db, 'historier', 'd1A2P3HHLjtrbsEZEbIs');
+    const docSnap2 = await getDoc(docRef2);
+    
+    if (docSnap2.exists()) {
+      content.value = docSnap2.data().historieKina;
+    } else {
+      console.log('No such document in historier collection!');
+      content.value = 'Document not found';
+    }
+
+  } catch (error) {
+    console.error('Error fetching document:', error);
+    title.value = 'Error fetching data';
+    content.value = 'Error fetching data';
+  }
+});
 </script>
+
 
 <style scoped>
 .audio {
