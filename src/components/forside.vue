@@ -1,7 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 const router = useRouter();
+
 
 const showPosition = (position) => {
   console.log("Latitude: " + position.coords.latitude + 
@@ -18,11 +20,17 @@ const getLocation = () => {
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
-  }
-  
+  }  
 }
 
 
+
+const changeLocale = (newLocale) => {
+      console.log(newLocale);
+      console.log("Locale changed to: " + newLocale);
+      console.log(useI18n());
+    }
+   
 
 </script>
 
@@ -35,10 +43,10 @@ const getLocation = () => {
         <div class="text">
         <p class="overskrift2">{{ $t('Geografisk Have') }}</p>
       
-        <p class="overskrift">Plantejægerne</p>
+        <p class="overskrift">{{ $t('Plantejægerne') }}</p>
        
         <RouterLink to="/map">
-        <button class="big-button" @click="getLocation" @clcik="changeLocale('da')">{{ $t('Fortsæt') }}</button>
+        <button class="big-button" @click="getLocation">{{ $t('Fortsæt') }}</button>
         </RouterLink>
 
         <div class="small-buttons">
@@ -53,10 +61,10 @@ const getLocation = () => {
         
         </div>
       </div>
-          
-        </div>
-      </div>
-  
+     </div>
+    </div>
+    <button id="install" hidden>Install</button>
+
   </template>
   
   <style scoped>

@@ -5,18 +5,18 @@ import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import forside from './components/forside.vue'
 import { RouterLink } from 'vue-router';
 
+
 export default {
   name: 'App',
   components: {
-      forside,
+    forside,
   },
-  methods: {
-    changeLocale(locale) {
-      this.$i18n.locale = locale;
-    },
-  },
-
+  
 }
+
+
+
+    
 </script>
 
 <template>
@@ -25,6 +25,8 @@ export default {
   <RouterLink to="/audio" style="display: none;"></RouterLink>
   <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
+
+
  
   <RouterView></RouterView>
  
