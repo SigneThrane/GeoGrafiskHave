@@ -27,6 +27,7 @@ const title = ref('');
 const lande = ref('');
 const varighed = ref('');
 
+
 onMounted(async () => {
   try {
     // Fetch document from 'historieTitel' collection
@@ -74,6 +75,7 @@ onMounted(async () => {
     varighed.value = 'Error fetching data. Check console for details.';
   }
 })
+
 
 </script>
 

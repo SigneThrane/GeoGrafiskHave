@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import { getApp, initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
+
 import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
