@@ -8,7 +8,7 @@
     <h1>{{ title }}</h1>
 
     <div class="audio">
-  <audio id="audioPlayer" src="/src/assets/songPlaceholder.mp3"></audio>
+  <audio id="audioPlayer" src="/src/assets/Geografisk Have - Kina - DA.mp3"></audio>
   <div class="progress">
     <div id="progressBar"></div>
   </div>

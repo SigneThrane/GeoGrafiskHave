@@ -1,5 +1,8 @@
 
 <template>
+   <router-link to="/">
+      <button class="back-button"> </button>
+    </router-link>
   <div class="popUp">
     <div class="popup-img-container"> 
       <img class="popup-img" src="/src/assets/imgSmall.png" alt="">
@@ -182,6 +185,23 @@ onMounted(async () => {
   color: #606060;
   font-family: 'stagBold', sans-serif;
 }
+
+.back-button {
+  position: absolute;
+  top: 14px; 
+  left: 15px; 
+  background-color: #404040;
+  border: none;
+  border-radius: 50%;
+  height: 4%;
+  width: 10%;
+  cursor: pointer;
+  background-image: url('/src/assets/backButton.png');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: 25%; 
+}
+
 
 @media only screen
 and (min-width: 1370px)
