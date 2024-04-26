@@ -19,7 +19,7 @@ export default {
   <div>
   <RouterLink to="/Forside" style="display: none;"></RouterLink>
   <RouterLink to="/Audio" style="display: none;"></RouterLink>
-  <RouterLink to="/AudioTekst" style="display: none;"></RouterLink>
+  <RouterLink to="/udioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
   <RouterLink to="/Frontpage" style="display: none;"></RouterLink>
   <RouterLink to="/Mapenglish" style="display: none;"></RouterLink>

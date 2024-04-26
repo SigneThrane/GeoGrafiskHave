@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Forside from './components/Forside.vue'
-import Audio from './components/Audio.vue'
-import AudioTekst from './components/AudioTekst.vue'
+import Forside from './components/forside.vue'
+import Audio from './components/audio.vue'
+import AudioTekst from './components/audioTekst.vue'
 import Map from './components/Map.vue'
-import Frontpage from './components/Frontpage.vue'
+import Frontpage from './components/frontpage.vue'
 import Mapenglish from './components/Mapenglish.vue'
 
 import App from './App.vue'
