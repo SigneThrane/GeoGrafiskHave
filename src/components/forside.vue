@@ -23,12 +23,13 @@ const getLocation = () => {
 }
 
 const changeLocale = () => {
+  console.log(router.locale);
   if (router.locale.value === 'da') {
     router.push({ name: 'forside', params: { lang: 'da' } });
   } else {
     router.push({ name: 'forside', params: { lang: 'en' } });
   }
-  console.log(router.locale.value);
+  
 }
 
 </script>
