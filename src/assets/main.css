@@ -14,3 +14,7 @@ body{
     src: url('/src/assets/Stag Regular-ttf') format('ttf');
   
   }
+
+  *{
+    margin: 0%;
+  }

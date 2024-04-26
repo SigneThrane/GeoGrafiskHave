@@ -105,7 +105,7 @@ onMounted(async () => {
   background-color: #343333;
   padding: 25px; 
   color: #FFFFFF;
-  height: 18%;
+  height: 20%;
 }
 
 .popup-info {
@@ -129,7 +129,13 @@ onMounted(async () => {
   color: white;
   position: relative; 
   top: -45%; 
+  font-size: 35px;
 }
+
+p{
+  font-size: 15px;
+}
+
 .popup-img {
   position: absolute;
   top: -30%; 

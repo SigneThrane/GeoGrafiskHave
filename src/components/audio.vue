@@ -159,18 +159,20 @@ audioPlayer.addEventListener('timeupdate', function() {
 
 h1 {
   font-family: 'stagBold', sans-serif;
-  margin-left: 7%;
+  margin: 8%;
   margin-top: 20px; 
+  font-size: 35px;
 }
 
 p {
-  margin-bottom: 39px; 
+  margin-bottom: 45px; 
+  font-size: 15px;
 }
 
 h1, p {
   color: #FFFFFF;
   margin-left: 7%;
-  margin-top: -30px; 
+  margin-top: -40px; 
 }
 
 .audio-container p {
@@ -245,7 +247,7 @@ h1, p {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 15px;
-  margin-top: -24px; 
+  margin-top: -25px; 
 }
 
 .icon-button-text {
@@ -255,6 +257,7 @@ h1, p {
   background-size: 58%; 
   margin-top: 9%;
   margin-left: 14%;
+  opacity: 50%;
 }
 
 .router-link {
@@ -281,6 +284,7 @@ h1, p {
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 85%; 
+  opacity: 50%;
 }
 
 @media only screen

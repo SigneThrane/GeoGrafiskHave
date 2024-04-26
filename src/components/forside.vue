@@ -82,6 +82,7 @@ const getLocation = () => {
     bottom: 0;
     left: 0;
     background: linear-gradient(to top, #125F31, transparent);
+    opacity: 90%;
   }
   
   .forside {
@@ -95,12 +96,12 @@ const getLocation = () => {
   
   .centered-image {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 45%;
-    height: 20%;
+    width: 34.5%;
+    height: 16%;
     
   }
 
@@ -116,23 +117,20 @@ const getLocation = () => {
     text-align: center;
     font-size: 40px;
     font-family: 'stagBold', sans-serif;
-    font-weight: regular;
+    font-weight: bold;
     margin: 0;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);  /* This adds a drop shadow to the text */
     padding-top: 10%;
-    padding-bottom: 10%;
+    padding-bottom: 17%;
 }
 
 .overskrift2 {
     text-align: center;
     font-size: 30px;
     font-family: 'stagReg';
-    font-weight: regular;
     margin: 0;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);  /* This adds a drop shadow to the text */
-    margin-top: 25px; 
+    margin-top: -75px; 
 }
   
 
@@ -140,14 +138,13 @@ const getLocation = () => {
     margin-top: 3px;
     background-color: white;
     font-family: 'stagBold', sans-serif;
-    font-weight: bold;
     color: #125F31;
     font-size: 25px;
-  width: 215px;
-  height: 50px;
-  margin-bottom: 45px;
-  border-radius: 50px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
+    width: 215px;
+    height: 50px;
+    margin-bottom: 45px;
+    border-radius: 50px;
+    border-style: none;
 
 }
 
@@ -160,25 +157,26 @@ const getLocation = () => {
 
 
 .small-button1, .small-button2 {
-    margin: 0 10px;  /* This adds 10px of space to the left and right of each button */
+    margin: 0 30px;  /* This adds 10px of space to the left and right of each button */
     color: white;
-    background-color: #125F31;
-    border-color: white;
-    font-size: 18px;
+    background-color: transparent;
+    border-color: white; 
+    font-size: 15px;
     font-family: 'stagBold', sans-serif;
-    width: 90%;
-    height: 40px;
+    height: 45px;
     border-radius: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.70); 
-  
+    border-style: solid;
+    width: 110px; 
+}
+
+.small-button1:hover, .small-button2:hover {
+    background-color: #125F31; 
+    border-color: transparent; 
 }
 
 .small-button1 {
- margin-left: 5%;
-}
+ margin-left: 20%;
 
-.small-button2 {
-   
 }
 
 @media only screen

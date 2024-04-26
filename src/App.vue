@@ -17,11 +17,11 @@ export default {
 
 <template>
   <div>
-  <RouterLink to="/forside" style="display: none;"></RouterLink>
-  <RouterLink to="/audio" style="display: none;"></RouterLink>
-  <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
+  <RouterLink to="/Forside" style="display: none;"></RouterLink>
+  <RouterLink to="/Audio" style="display: none;"></RouterLink>
+  <RouterLink to="/AudioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
-  <RouterLink to="/frontpage" style="display: none;"></RouterLink>
+  <RouterLink to="/Frontpage" style="display: none;"></RouterLink>
   <RouterLink to="/Mapenglish" style="display: none;"></RouterLink>
   <RouterView></RouterView>
 
