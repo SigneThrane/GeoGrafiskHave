@@ -125,8 +125,8 @@ h2{
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/ToggleButton.png');
   background-repeat: no-repeat;

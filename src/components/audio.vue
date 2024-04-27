@@ -21,11 +21,11 @@
     <button id="skipBackButton" class="icon-button-back"></button>
 
     <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
   </svg>
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
     <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
   </svg>
 </button>
@@ -165,14 +165,17 @@ h1 {
 }
 
 p {
-  margin-bottom: 45px; 
-  font-size: 15px;
+  margin-bottom: 22%; 
+  font-size: 15px; 
+  color: #FFFFFF;
+  margin-top: -40%;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1, p {
   color: #FFFFFF;
-  margin-left: 7%;
-  margin-top: -40px; 
+  margin-left: 13%;
+  margin-top: -90px; 
 }
 
 .audio-container p {
@@ -190,8 +193,8 @@ h1, p {
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/backButton.png');
   background-repeat: no-repeat;
@@ -210,11 +213,12 @@ h1, p {
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 20px; 
+  margin-top: 30px; 
+  margin-bottom: 20px;
 }
 
 .progress {
-  width: 85%;
+  width: 75%;
   background-color: #ffffff;
   height: 10px;
   margin: 10px auto;
@@ -228,7 +232,7 @@ h1, p {
 }
 
 .time-info {
-  width: 85%;
+  width: 75%;
   margin: 10px auto; 
   font-size: small;
   font-family: open sans;
@@ -240,7 +244,7 @@ h1, p {
 .icon-button-back,
 .icon-button-speed,
 .icon-button-play {
-  padding: 12px 18px;
+  padding: 15px 22px;
   background-color: RGB(52 51 51);
   color: white;
   border: none;
@@ -254,9 +258,9 @@ h1, p {
   background-image: url('/src/assets/Døv_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 58%; 
-  margin-top: 9%;
-  margin-left: 14%;
+  background-size: 28px; 
+  margin-top: 17%;
+  margin-left: 17%;
   opacity: 50%;
 }
 
@@ -269,21 +273,21 @@ h1, p {
   background-image: url('/src/assets/30_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 36px; 
 }
 
 .icon-button-back{
   background-image: url('/src/assets/15_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 36px; 
 }
 
 .icon-button-speed {
   background-image: url('/src/assets/1x_hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 37px; 
   opacity: 50%;
 }
 

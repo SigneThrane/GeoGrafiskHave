@@ -134,6 +134,7 @@ onMounted(async () => {
 
 p{
   font-size: 15px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .popup-img {
@@ -195,19 +196,18 @@ p{
 .back-button {
   position: absolute;
   top: 14px; 
-  left: 15px; 
+  left: 14px; 
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/backButton.png');
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 25%; 
 }
-
 
 @media only screen
 and (min-width: 1370px)

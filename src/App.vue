@@ -1,4 +1,3 @@
-
 <script>
 import db from './firebase/init.js'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
@@ -8,7 +7,7 @@ import { RouterLink } from 'vue-router';
 export default {
   name: 'App',
   components: {
-
+    forside,
   },
 
 
@@ -17,17 +16,16 @@ export default {
 
 <template>
   <div>
-  <RouterLink to="/Forside" style="display: none;"></RouterLink>
-  <RouterLink to="/Audio" style="display: none;"></RouterLink>
-  <RouterLink to="/udioTekst" style="display: none;"></RouterLink>
+  <RouterLink to="/forside" style="display: none;"></RouterLink>
+  <RouterLink to="/audio" style="display: none;"></RouterLink>
+  <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
-  <RouterLink to="/Frontpage" style="display: none;"></RouterLink>
-  <RouterLink to="/Mapenglish" style="display: none;"></RouterLink>
+ 
   <RouterView></RouterView>
 
-  
+
 </div>
-  
+
 </template>
 
 
