@@ -5,27 +5,11 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import './registerServiceWorker'
-import { createI18n } from 'vue-i18n'
-import { useI18n } from 'vue-i18n'
+import { createI18n, useI18n } from 'vue-i18n'
 import { ref } from 'vue'
-//importing the translations from the locale folder
-import da from './locale/da.json'
-import en from './locale/en.json'
 
-export default {
-    setup() {
-      const { t, locale } = useI18n() // Use the useI18n function inside the setup function
-  
-      const changeLocale = (newLocale) => {
-        locale.value = newLocale; // Change the locale
-      }
-  
-      return {
-        translatedMessage: t('message.key'), // Use the t function to translate a message
-        changeLocale
-      }
-    }
-  }
+
+
 
 // Registering service worker if supported by the browser
 if ('serviceWorker' in navigator) {
@@ -43,26 +27,25 @@ if ('serviceWorker' in navigator) {
 
 // Creating i18n instance with Danish as default locale and Danish and English translations
 const i18n = createI18n({
-    lacacy: false,
-locale:'da', //default locale Danish
-messages:{//Danish translation
-    da:da,
-    en:en,
-    buttonLabel: 'Dansk',
-    //add more translations here
-    GeoGrafiskHave: 'Geografisk Have',
-    Plantejærgerne: 'Plantejærgerne',
-    Fortsæt: 'Fortsæt',
-    Tilbage: 'Tilbage',
-},
-en: {//English translation
-    buttonLabel: 'English',
-    //add more translations here
-    GeoGrafiskHave: 'Geografisk Garden',
-    Plantejærgerne: 'Plant hunters',
-    Fortsæt: 'Continue',
-    Tilbage: 'Back',
+  legacy: false,
+  locale: 'da',
+  fallbackLocale: 'da',
+  messages: {
+    en: {
+        Engelsk: 'English',
+        Dansk: 'Danish',
+        GeografiskHave : 'Geographic Garden',
+        PlanteJægerne: 'Plant Hunters',
+        Continue: 'Continue',
+    },
+    da: {
+        Engelsk: 'Engelsk',
+        Dansk: 'Dansk',
+        GeografiskHave: 'Geografisk Have',
+        PlanteJægerne: 'Plantejægerne',
+        Continue: 'Fortsæt',
     }
+  }
 })
 
 
