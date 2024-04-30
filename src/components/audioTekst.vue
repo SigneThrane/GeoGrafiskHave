@@ -1,4 +1,5 @@
 <template>
+  <div class="locale.changer"> 
   <div class="audio">
     <div class="img-container">
       <img class="blur-img" src="/src/assets/Bagholdsangreb.jpg" alt="">
@@ -8,56 +9,25 @@
     </router-link>
     </div>
     <div class="text-overlay">
-      <h2>Bagholdsangreb ved den gule flod</h2>
+      <h2>
+        {{ $t('title') }}
+      </h2>
       <div class="scrollable-content">
-        <p>
-          Det var tidlig marts 1912 ved bredden af 
-den gule flod, 700 kilometer syd for Beijing. 
-William Purdom som var plantejæger 
-fra Arnold Arboretums forskningsinstitut 
-og hans tre-mands følge rejste gennem et 
-ødelagt landskab efter Xinhai-revolutionen. 
-Vejene var farlige, fyldt med røvere, 
-men indtil nu havde deres rejse været 
-uden nogen former for besvær.
-
-Men da de nærmede sig deres destination, 
-som var jernbanestationen i Honan, 
-blev de pludselig overfaldet af en gruppe 
-røvere til hest. Skuddene fløj, 
-og to af Williams heste blev dræbt. 
-Røverne var højst sandsynligt ikke klar over 
-hvad Williams store last bestod af, 
-men han var udlænding, havde heste 
-de kunne bytte og så havde han penge 
-for det skulle man bruge for at krydse 
-de forskellige kontrollerede grænser.
-
-Men inden røverne kunne nå at handle yderligere, 
-greb William sit gevær og skød tre af dem 
-og flere af deres heste. 
-Hans følge sluttede sig derefter til kampen, 
-og røverne blev drevet væk. 
-
-Efter dette hæsblæsende scenarie galopperede 
-William og hans mænd til den nærliggende 
-by Shenchow, hvorefter de fortsatte 
-mod Beijing, uden flere forhindringer.
-
-William Purdom var på et utal af ekspeditioner
-til Kina og den tibetanske region Amdo. 
-Han sendte over 550 pakker frø og tusindvis
- af tørrede og nøje dokumenterede 
-herbarier til Boston i løbet af sin rejse. 
-
+    
+        <p> 
+          {{ $t('story') }}
         </p>
+     
       </div>
     </div>
   </div>
+ </div>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
 
+const { t: $t } = useI18n()
 </script>
 
 <style scoped>

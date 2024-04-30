@@ -1,11 +1,12 @@
 <template>
+<div class="locale.changer"> 
   <div class="audio-container">
     <router-link to="/map">
       <button class="back-button"> </button>
     </router-link>
     <img src="../assets/featured.png" alt="">
-    <p>Kina</p>
-    <h1>Bagholdsangreb ved den gule flod</h1>
+    <p>{{ $t('Kina') }}</p>
+    <h1>{{ $t('title2') }}</h1>
 
     <div class="audio">
   <audio id="audioPlayer" src="/src/assets/songPlaceholder.mp3"></audio>
@@ -38,9 +39,16 @@
   </div>
 </div>
   </div>
+</div>
 </template>
 
 <script setup>
+
+import { useI18n } from 'vue-i18n'
+
+const i18n = useI18n({})
+const { t: $t } = i18n
+
 document.addEventListener('DOMContentLoaded', function() {
   const audioPlayer = document.getElementById('audioPlayer');
   const playPauseButton = document.getElementById('playPauseButton');

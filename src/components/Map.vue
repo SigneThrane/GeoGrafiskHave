@@ -1,26 +1,32 @@
 <script setup>
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
 </script>
 
-<template>
+<template> 
+ 
   <div class="map">
       <img class="map-img" src="/src/assets/Kort.jpg" alt="">
   </div>
+  <div class="locale.changer"> 
   <div class="popUp">
     <div class="popup-img-container"> 
       <img class="popup-img" src="/src/assets/imgSmall.png" alt="">
       <router-link to="/audio">
         <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
-    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
-  </svg></button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+        </svg></button>
     </router-link>
     </div>
-    <h2>Bagholdsangreb ved den gule flod</h2>
+      <h2>{{ $t('title2') }}</h2>
     <div class="popup-info">
-      <p id="varighed">Varighed 2 minutter</p>
-      <p id="kina">Kina</p>
+      <p id="varighed">{{ $t('Varighed2minutter') }}</p>
+      <p id="kina">{{ $t('Kina') }}</p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -48,6 +54,7 @@ import { ref } from 'vue';
   padding: 25px; 
   color: #FFFFFF;
   height: 18%;
+  width: 85%;
 }
 
 .popup-info {
@@ -113,7 +120,7 @@ import { ref } from 'vue';
   position: relative;
   width: 9%;
   height: 10%;
-  padding: 10px 20px; 
+  padding: 10px 30px; 
   border: 2px solid white; 
   border-radius: 50px; 
   font-family: 'stagBold', sans-serif;

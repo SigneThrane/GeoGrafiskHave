@@ -26,11 +26,6 @@ const getLocation = () => {
   }  
 }
 
-
-
-
-   
-
 </script>
 
 <template>   
@@ -186,9 +181,7 @@ const getLocation = () => {
  margin-left: 5%;
 }
 
-.small-button2 {
-   
-}
+
 
 @media only screen
 and (min-width: 1370px)
