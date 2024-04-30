@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n'
 
-const i18n = useI18n({ useScope: 'global' })
+const i18n = useI18n({})
 const { t: $t } = i18n
 
 const router = useRouter();
