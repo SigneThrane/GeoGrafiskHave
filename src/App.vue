@@ -1,4 +1,3 @@
-
 <script>
 import db from './firebase/init.js'
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
@@ -32,7 +31,7 @@ export default {
  
   
 </div>
-  
+
 </template>
 
 

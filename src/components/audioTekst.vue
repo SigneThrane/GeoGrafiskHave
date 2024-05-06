@@ -76,13 +76,15 @@ h2{
 }
 
 .text-overlay h2 {
-  font-size: 1.5em;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: -10%;
 }
 
 .text-overlay p {
   font-family: open sans;
-  font-size: 1em;
+  font-size: 14px;
+  margin: 5%;
 }
 
 .scrollable-content {
@@ -97,8 +99,8 @@ h2{
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/ToggleButton.png');
   background-repeat: no-repeat;

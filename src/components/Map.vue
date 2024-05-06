@@ -1,10 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-import { useI18n } from 'vue-i18n'
-
-const { t: $t } = useI18n()
-</script>
-
 <template> 
  
   <div class="map">
@@ -31,6 +24,9 @@ const { t: $t } = useI18n()
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
 import { ref, computed, onMounted } from 'vue';
 import { db } from '../main'; 
 import { doc, getDoc } from 'firebase/firestore'; 
@@ -139,7 +135,14 @@ onMounted(async () => {
   color: white;
   position: relative; 
   top: -45%; 
+  font-size: 35px;
 }
+
+p{
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .popup-img {
   position: absolute;
   top: -30%; 
@@ -199,19 +202,18 @@ onMounted(async () => {
 .back-button {
   position: absolute;
   top: 14px; 
-  left: 15px; 
+  left: 14px; 
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/backButton.png');
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 25%; 
 }
-
 
 @media only screen
 and (min-width: 1370px)
