@@ -170,7 +170,7 @@ const getLocation = () => {
     height: 45px;
     border-radius: 50px;
     border-style: solid;
-    width: 110px; 
+    width: 100px; 
 }
 
 .small-button1:hover, .small-button2:hover {
@@ -179,7 +179,7 @@ const getLocation = () => {
 }
 
 .small-button1 {
- margin-left: 20%;
+ margin-left: 8%;
 }
 
 @media only screen

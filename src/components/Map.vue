@@ -1,7 +1,9 @@
 <template> 
- 
   <div class="map">
       <img class="map-img" src="/src/assets/Kort.jpg" alt="">
+      <router-link to="/">
+      <button class="back-button"> </button>
+    </router-link>
   </div>
   <div class="locale.changer"> 
   <div class="popUp">
@@ -109,8 +111,8 @@ onMounted(async () => {
   background-color: #343333;
   padding: 25px; 
   color: #FFFFFF;
-  height: 18%;
-  width: 85%;
+  height: 20%;
+  width: 89%;
 }
 
 .popup-info {
