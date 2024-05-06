@@ -259,11 +259,11 @@ and (max-width: 1605px)
 }
 
 @media only screen
-and (min-width: 300px)
+and (min-width: 200px)
 and (max-width: 400px)
 { 
   .popUp {
-  height: 27%;
+  height: 25%;
   width: 87%;
 }
 
@@ -280,5 +280,16 @@ margin-right: 10%;
   font-size: 30px;
 }
 }
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+      .popUp {
+  height: 21%;
+  width: 87%;
+  margin-top: 32%;
+}
+    }
 </style>
 
