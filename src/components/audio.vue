@@ -277,4 +277,58 @@ img{
 }
 
 }
+
+@media only screen
+and (min-width: 370px)
+and (max-width: 667px)
+{ 
+img{
+  height: 70%;
+}
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 5%;
+  width: 9%;
+  background-size: 25%; 
+}
+
+.icon-button-forward{
+  background-size: 26px; 
+}
+
+.icon-button-back{
+  background-size: 26px; 
+}
+
+.icon-button-speed { 
+  background-size: 27px; 
+}
+
+.icon-button-text {
+  background-size: 18px; 
+}
+
+h1 {
+margin-top: -70px;
+  font-size: 25px;
+}
+
+.icon-button-text,
+.icon-button-forward,
+.icon-button-back,
+.icon-button-speed,
+.icon-button-play {
+  padding: 10px 17px;
+  background-color: RGB(52 51 51);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-top: -25px; 
+}
+}
+
+
 </style>

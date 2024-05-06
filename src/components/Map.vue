@@ -257,5 +257,28 @@ and (max-width: 1605px)
   overflow-x: hidden;
 }
 }
+
+@media only screen
+and (min-width: 370px)
+and (max-width: 667px)
+{ 
+  .popUp {
+  height: 27%;
+  width: 87%;
+}
+
+#kina {
+margin-top: 5%;
+margin-right: 10%;
+}
+
+.icon-button-play {
+  top: 45%;
+}
+
+.popUp h2 { 
+  font-size: 30px;
+}
+}
 </style>
 

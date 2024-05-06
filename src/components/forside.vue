@@ -205,4 +205,20 @@ and (max-width: 1605px)
     height: 100vh;
   }
 }
+
+@media only screen
+and (min-width: 370px)
+and (max-width: 667px)
+{ 
+  .centered-image {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 35%;
+    height: 20%;
+    
+  }
+}
   </style>
