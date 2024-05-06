@@ -1,11 +1,12 @@
 <template>
+<div class="locale.changer"> 
   <div class="audio-container">
     <router-link to="/map">
       <button class="back-button"> </button>
     </router-link>
     <img src="../assets/featured.png" alt="">
-    <p>{{ lande }}</p>
-    <h1>{{ title }}</h1>
+    <p>{{ $t('Kina') }}</p>
+    <h1>{{ $t('title2') }}</h1>
 
     <div class="audio">
   <audio id="audioPlayer" src="/src/assets/Geografisk Have - Kina - DA.mp3"></audio>
@@ -38,46 +39,15 @@
   </div>
 </div>
   </div>
+</div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { db } from '../main'; 
-import { doc, getDoc } from 'firebase/firestore'; 
 
-const title = ref('');
-const lande = ref('');
+import { useI18n } from 'vue-i18n'
 
-onMounted(async () => {
-  try {
-    // Fetch document from 'historieTitel' collection
-    const docRef = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
-    const docSnap = await getDoc(docRef);
-    
-    if (docSnap.exists()) {
-      title.value = docSnap.data().titelKina;
-    } else {
-      console.log('No such document in historieTitel collection!');
-      title.value = 'Document not found';
-    }
-
-    // Fetch document from 'lande' collection
-    const docRef2 = doc(db, 'Lande', '4BiWlzlz2Fmp743jJC59');
-    const docSnap2 = await getDoc(docRef2);
-    
-    if (docSnap2.exists()) {
-      lande.value = docSnap2.data().Land;
-    } else {
-      console.log('No such document in lande collection!');
-      lande.value = 'Document not found';
-    }
-
-  } catch (error) {
-    console.error('Error fetching document:', error);
-    title.value = 'Error fetching data';
-    lande.value = 'Error fetching data. Check console for details.';
-  }
-});
+const i18n = useI18n({})
+const { t: $t } = i18n
 
 document.addEventListener('DOMContentLoaded', function() {
   const audioPlayer = document.getElementById('audioPlayer');
