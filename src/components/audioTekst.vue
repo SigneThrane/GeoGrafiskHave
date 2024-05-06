@@ -135,4 +135,24 @@ and (max-width: 1605px)
   z-index: 2;
 }
 }
+
+@media only screen
+and (min-width: 300px)
+and (max-width: 400px)
+{ 
+img{
+  height: 70%;
+}
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 5%;
+  width: 9%;
+  background-size: 55%; 
+}
+.text-overlay h2 {
+  margin-bottom: 15px;
+  margin-top: 35%;
+}
+}
 </style>
