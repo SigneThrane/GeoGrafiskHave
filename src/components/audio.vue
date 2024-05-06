@@ -279,8 +279,8 @@ img{
 }
 
 @media only screen
-and (min-width: 370px)
-and (max-width: 667px)
+and (min-width: 300px)
+and (max-width: 400px)
 { 
 img{
   height: 70%;
@@ -298,11 +298,11 @@ img{
 }
 
 .icon-button-back{
-  background-size: 26px; 
+  background-size: 30px; 
 }
 
 .icon-button-speed { 
-  background-size: 27px; 
+  background-size: 30px; 
 }
 
 .icon-button-text {
@@ -329,6 +329,4 @@ margin-top: -70px;
   margin-top: -25px; 
 }
 }
-
-
 </style>

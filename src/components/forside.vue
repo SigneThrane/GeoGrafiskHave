@@ -207,8 +207,8 @@ and (max-width: 1605px)
 }
 
 @media only screen
-and (min-width: 370px)
-and (max-width: 667px)
+and (min-width: 300px)
+and (max-width: 400px)
 { 
   .centered-image {
     position: absolute;
@@ -216,8 +216,8 @@ and (max-width: 667px)
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 35%;
-    height: 20%;
+    width: 30%;
+    height: 16%;
     
   }
 }

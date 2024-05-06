@@ -259,8 +259,8 @@ and (max-width: 1605px)
 }
 
 @media only screen
-and (min-width: 370px)
-and (max-width: 667px)
+and (min-width: 300px)
+and (max-width: 400px)
 { 
   .popUp {
   height: 27%;
