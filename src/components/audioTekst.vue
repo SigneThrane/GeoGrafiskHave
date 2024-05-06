@@ -1,4 +1,5 @@
 <template>
+  <div class="locale.changer"> 
   <div class="audio">
     <div class="img-container">
       <img class="blur-img" src="/src/assets/Bagholdsangreb.jpg" alt="">
@@ -8,52 +9,25 @@
     </router-link>
     </div>
     <div class="text-overlay">
-     <h2>{{ title }}</h2>
+      <h2>
+        {{ $t('title') }}
+      </h2>
       <div class="scrollable-content">
-        <p>{{ content }}</p>
+    
+        <p> 
+          {{ $t('story') }}
+        </p>
+     
       </div>
     </div>
   </div>
+ </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { db } from '../main'; // Ensure the path to main.js is correct
-import { doc, getDoc } from 'firebase/firestore'; // Import Firestore functions
+import { useI18n } from 'vue-i18n'
 
-const title = ref('');
-const content = ref('');
-
-onMounted(async () => {
-  try {
-    // Fetch document from 'historieTitel' collection
-    const docRef1 = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
-    const docSnap1 = await getDoc(docRef1);
-    
-    if (docSnap1.exists()) {
-      title.value = docSnap1.data().titelKina;
-    } else {
-      console.log('No such document in historieTitel collection!');
-      title.value = 'Document not found';
-    }
-
-    // Fetch document from 'historier' collection
-    const docRef2 = doc(db, 'historier', 'd1A2P3HHLjtrbsEZEbIs');
-    const docSnap2 = await getDoc(docRef2);
-    
-    if (docSnap2.exists()) {
-      content.value = docSnap2.data().historieKina;
-    } else {
-      console.log('No such document in historier collection!');
-      content.value = 'Document not found';
-    }
-
-  } catch (error) {
-    console.error('Error fetching document:', error);
-    title.value = 'Error fetching data';
-    content.value = 'Error fetching data';
-  }
-});
+const { t: $t } = useI18n()
 </script>
 
 
@@ -102,13 +76,15 @@ h2{
 }
 
 .text-overlay h2 {
-  font-size: 1.5em;
-  margin-bottom: 8px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: -10%;
 }
 
 .text-overlay p {
   font-family: open sans;
-  font-size: 1em;
+  font-size: 14px;
+  margin: 5%;
 }
 
 .scrollable-content {
@@ -123,8 +99,8 @@ h2{
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/ToggleButton.png');
   background-repeat: no-repeat;

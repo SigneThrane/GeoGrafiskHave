@@ -1,29 +1,35 @@
-
-<template>
-   <router-link to="/">
+<template> 
+  <div class="map">
+      <img class="map-img" src="/src/assets/Kort.jpg" alt="">
+      <router-link to="/">
       <button class="back-button"> </button>
     </router-link>
+  </div>
+  <div class="locale.changer"> 
   <div class="popUp">
     <div class="popup-img-container"> 
       <img class="popup-img" src="/src/assets/imgSmall.png" alt="">
       <router-link to="/audio">
         <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
-    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
-  </svg></button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+         <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+        </svg></button>
     </router-link>
     </div>
-    <h2>{{ title }}</h2>
+      <h2>{{ $t('title2') }}</h2>
     <div class="popup-info">
-      <p id="varighed">{{ varighed }}</p>
-      <p id="kina">{{ lande }}</p>
+      <p id="varighed">{{ $t('Varighed2minutter') }}</p>
+      <p id="kina">{{ $t('Kina') }}</p>
     </div>
+  </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { db } from '../main'; 
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
+import { ref, computed, onMounted } from 'vue'; 
 import { doc, getDoc } from 'firebase/firestore'; 
 
 const title = ref('');
@@ -105,7 +111,8 @@ onMounted(async () => {
   background-color: #343333;
   padding: 25px; 
   color: #FFFFFF;
-  height: 18%;
+  height: 20%;
+  width: 89%;
 }
 
 .popup-info {
@@ -129,7 +136,14 @@ onMounted(async () => {
   color: white;
   position: relative; 
   top: -45%; 
+  font-size: 35px;
 }
+
+p{
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .popup-img {
   position: absolute;
   top: -30%; 
@@ -171,7 +185,7 @@ onMounted(async () => {
   position: relative;
   width: 9%;
   height: 10%;
-  padding: 10px 20px; 
+  padding: 10px 30px; 
   border: 2px solid white; 
   border-radius: 50px; 
   font-family: 'stagBold', sans-serif;
@@ -189,19 +203,18 @@ onMounted(async () => {
 .back-button {
   position: absolute;
   top: 14px; 
-  left: 15px; 
+  left: 14px; 
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/backButton.png');
   background-repeat: no-repeat;
   background-position: center; 
   background-size: 25%; 
 }
-
 
 @media only screen
 and (min-width: 1370px)

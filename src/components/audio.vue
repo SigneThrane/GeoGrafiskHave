@@ -1,11 +1,12 @@
 <template>
+<div class="locale.changer"> 
   <div class="audio-container">
     <router-link to="/map">
       <button class="back-button"> </button>
     </router-link>
     <img src="../assets/featured.png" alt="">
-    <p>{{ lande }}</p>
-    <h1>{{ title }}</h1>
+    <p>{{ $t('Kina') }}</p>
+    <h1>{{ $t('title2') }}</h1>
 
     <div class="audio">
   <audio id="audioPlayer" src="/src/assets/Geografisk Have - Kina - DA.mp3"></audio>
@@ -21,11 +22,11 @@
     <button id="skipBackButton" class="icon-button-back"></button>
 
     <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
     <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
   </svg>
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
     <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
   </svg>
 </button>
@@ -38,46 +39,15 @@
   </div>
 </div>
   </div>
+</div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { db } from '../main'; 
-import { doc, getDoc } from 'firebase/firestore'; 
 
-const title = ref('');
-const lande = ref('');
+import { useI18n } from 'vue-i18n'
 
-onMounted(async () => {
-  try {
-    // Fetch document from 'historieTitel' collection
-    const docRef = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
-    const docSnap = await getDoc(docRef);
-    
-    if (docSnap.exists()) {
-      title.value = docSnap.data().titelKina;
-    } else {
-      console.log('No such document in historieTitel collection!');
-      title.value = 'Document not found';
-    }
-
-    // Fetch document from 'lande' collection
-    const docRef2 = doc(db, 'Lande', '4BiWlzlz2Fmp743jJC59');
-    const docSnap2 = await getDoc(docRef2);
-    
-    if (docSnap2.exists()) {
-      lande.value = docSnap2.data().Land;
-    } else {
-      console.log('No such document in lande collection!');
-      lande.value = 'Document not found';
-    }
-
-  } catch (error) {
-    console.error('Error fetching document:', error);
-    title.value = 'Error fetching data';
-    lande.value = 'Error fetching data. Check console for details.';
-  }
-});
+const i18n = useI18n({})
+const { t: $t } = i18n
 
 document.addEventListener('DOMContentLoaded', function() {
   const audioPlayer = document.getElementById('audioPlayer');
@@ -159,18 +129,23 @@ audioPlayer.addEventListener('timeupdate', function() {
 
 h1 {
   font-family: 'stagBold', sans-serif;
-  margin-left: 7%;
+  margin: 8%;
   margin-top: 20px; 
+  font-size: 35px;
 }
 
 p {
-  margin-bottom: 39px; 
+  margin-bottom: 22%; 
+  font-size: 15px; 
+  color: #FFFFFF;
+  margin-top: -40%;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1, p {
   color: #FFFFFF;
-  margin-left: 7%;
-  margin-top: -30px; 
+  margin-left: 13%;
+  margin-top: -90px; 
 }
 
 .audio-container p {
@@ -188,8 +163,8 @@ h1, p {
   background-color: #404040;
   border: none;
   border-radius: 50%;
-  height: 4%;
-  width: 10%;
+  height: 38px;
+  width: 38px;
   cursor: pointer;
   background-image: url('/src/assets/backButton.png');
   background-repeat: no-repeat;
@@ -208,11 +183,12 @@ h1, p {
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 20px; 
+  margin-top: 30px; 
+  margin-bottom: 20px;
 }
 
 .progress {
-  width: 85%;
+  width: 75%;
   background-color: #ffffff;
   height: 10px;
   margin: 10px auto;
@@ -226,7 +202,7 @@ h1, p {
 }
 
 .time-info {
-  width: 85%;
+  width: 75%;
   margin: 10px auto; 
   font-size: small;
   font-family: open sans;
@@ -238,23 +214,24 @@ h1, p {
 .icon-button-back,
 .icon-button-speed,
 .icon-button-play {
-  padding: 12px 18px;
+  padding: 15px 22px;
   background-color: RGB(52 51 51);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 15px;
-  margin-top: -24px; 
+  margin-top: -25px; 
 }
 
 .icon-button-text {
   background-image: url('/src/assets/Døv_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 58%; 
-  margin-top: 9%;
-  margin-left: 14%;
+  background-size: 28px; 
+  margin-top: 17%;
+  margin-left: 17%;
+  opacity: 50%;
 }
 
 .router-link {
@@ -266,21 +243,22 @@ h1, p {
   background-image: url('/src/assets/30_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 36px; 
 }
 
 .icon-button-back{
   background-image: url('/src/assets/15_Hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 36px; 
 }
 
 .icon-button-speed {
   background-image: url('/src/assets/1x_hvid.png');
   background-repeat: no-repeat;
   background-position: center; 
-  background-size: 85%; 
+  background-size: 37px; 
+  opacity: 50%;
 }
 
 @media only screen
