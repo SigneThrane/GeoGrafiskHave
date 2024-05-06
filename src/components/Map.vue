@@ -27,8 +27,7 @@
 import { useI18n } from 'vue-i18n'
 
 const { t: $t } = useI18n()
-import { ref, computed, onMounted } from 'vue';
-import { db } from '../main'; 
+import { ref, computed, onMounted } from 'vue'; 
 import { doc, getDoc } from 'firebase/firestore'; 
 
 const title = ref('');
