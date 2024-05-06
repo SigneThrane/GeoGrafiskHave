@@ -1,10 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-import { useI18n } from 'vue-i18n'
-
-const { t: $t } = useI18n()
-</script>
-
 <template> 
  
   <div class="map">
@@ -31,6 +24,9 @@ const { t: $t } = useI18n()
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
 import { ref, computed, onMounted } from 'vue';
 import { db } from '../main'; 
 import { doc, getDoc } from 'firebase/firestore'; 
