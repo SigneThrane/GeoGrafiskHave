@@ -9,4 +9,9 @@ link git repository
 
  localhost when run dev frontpage 
 
- http://localhost:5174/audio brings to audio page
+ http://localhost:5174
+
+ firebase host link 
+
+ test-3b4f1.firebaseapp.com
+ 
