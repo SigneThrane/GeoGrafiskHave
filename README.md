@@ -14,4 +14,6 @@ link git repository
  firebase host link 
 
  test-3b4f1.firebaseapp.com
+
+ https://test-3b4f1.web.app/
  
