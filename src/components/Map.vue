@@ -226,14 +226,16 @@ and (max-width: 1605px)
 }
 }
 
-@media only screen
-and (min-width: 200px)
-and (max-width: 400px)
-{ 
-  .popUp {
-  height: 25%;
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+      .popUp {
+  height: 21%;
   width: 87%;
+  margin-top: 32%;
 }
+    }
 
 #kina {
 margin-top: 5%;
@@ -247,21 +249,7 @@ margin-right: 10%;
 .popUp h2 { 
   font-size: 30px;
 }
-}
-<<<<<<< HEAD
-</style>
-=======
 
-@media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-      .popUp {
-  height: 21%;
-  width: 87%;
-  margin-top: 32%;
-}
-    }
+
 </style>
 
->>>>>>> 118103b5b74437cee2bff7fb8cbf3e0bdd6dff0d
