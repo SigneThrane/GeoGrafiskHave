@@ -1,11 +1,50 @@
-<template> 
-  <div class="map">
-      <img class="map-img" src="/src/assets/Kort.jpg" alt="">
-      <router-link to="/">
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
+
+import "leaflet/dist/leaflet.css";
+import * as L from 'leaflet';
+
+
+
+
+const initialMap = ref(null);
+onMounted(()=> {
+    initialMap.value = L.map('map').setView([55.4732873, 9.4946134], 6);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19, 
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(initialMap.value);
+
+    // Set the bounds of the map
+    initialMap.value.setMaxBounds([
+        [55.4732873 - 0.01, 9.4946134 - 0.01], // southwest corner
+        [55.4732873 + 0.01, 9.4946134 + 0.01]  // northeast corner
+    ]);
+
+    // Add a marker to the map
+    L.marker([24.3746, 88.6004]).addTo(initialMap.value);
+    // Add a popup to the map
+    L.popup()
+        .setLatLng([55.4732873, 9.4946134]) // coordinates for Kolding
+        .setContent($t('Kina'))
+        .openOn(initialMap.value);
+});
+
+
+</script>
+
+<template>
+
+ <div class="locale.changer">   
+<div id="map" style="height:90vh;"></div>
+   <router-link to="/">
       <button class="back-button"> </button>
-    </router-link>
-  </div>
-  <div class="locale.changer"> 
+  </router-link>
+</div>
+
   <div class="popUp">
     <div class="popup-img-container"> 
       <img class="popup-img" src="/src/assets/imgSmall.png" alt="">
@@ -22,97 +61,26 @@
       <p id="kina">{{ $t('Kina') }}</p>
     </div>
   </div>
-  </div>
+ 
 </template>
 
-<script setup>
-import { useI18n } from 'vue-i18n'
-
-const { t: $t } = useI18n()
-import { ref, computed, onMounted } from 'vue'; 
-import { doc, getDoc } from 'firebase/firestore'; 
-
-const title = ref('');
-const lande = ref('');
-const varighed = ref('');
-
-
-onMounted(async () => {
-  try {
-    // Fetch document from 'historieTitel' collection
-    const docRef = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
-    const docSnap = await getDoc(docRef);
-    
-    if (docSnap.exists()) {
-      title.value = docSnap.data().titelKina;
-    } else {
-      console.log('No such document in historieTitel collection!');
-      title.value = 'Document not found';
-    }
-
-    // Fetch document from 'lande' collection
-    const docRef2 = doc(db, 'Lande', '4BiWlzlz2Fmp743jJC59');
-    const docSnap2 = await getDoc(docRef2);
-    
-    if (docSnap2.exists()) {
-      lande.value = docSnap2.data().Land;
-    } else {
-      console.log('No such document in lande collection!');
-      lande.value = 'Document not found';
-    }
-
-  } catch (error) {
-    console.error('Error fetching document:', error);
-    title.value = 'Error fetching data';
-    lande.value = 'Error fetching data. Check console for details.';
-  }
-
-  try {
-    // Fetch document from 'audioVarighed' collection
-    const docRef3 = doc(db, 'audioVarighed', 'OJhrUUo7Lwtbazdy8StJ');
-    const docSnap3 = await getDoc(docRef3);
-    
-    if (docSnap3.exists()) {
-      varighed.value = docSnap3.data().varighedKina;
-    } else {
-      console.log('No such document in audioVarighed collection!');
-      varighed.value = 'Document not found';
-    }
-
-  } catch (error) {
-    console.error('Error fetching document:', error);
-    varighed.value = 'Error fetching data. Check console for details.';
-  }
-})
-
-
-</script>
 
 <style scoped>
-.map {
-  background-color: #343333;
-  height: 98vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative; 
-}
-
-.map img {
-  transform: scale(5) translateX(-10%);
+.map-container {
+  position: relative; /* This is needed for the absolute positioning of .popUp to work correctly */
+  /* Other styles for your map container */
 }
 
 .popUp {
-  position: absolute; 
+  position: fixed; 
   bottom: 0; 
   background-color: #343333;
   padding: 25px; 
   color: #FFFFFF;
   height: 20%;
   width: 89%;
+  z-index: 1000;
+ 
 }
 
 .popup-info {
@@ -281,4 +249,3 @@ margin-right: 10%;
 }
 }
 </style>
-
