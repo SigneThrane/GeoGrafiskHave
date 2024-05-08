@@ -64,6 +64,68 @@ onMounted(()=> {
  
 </template>
 
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t: $t } = useI18n()
+import { ref, onMounted } from 'vue'; 
+import { doc, getDoc } from 'firebase/firestore'; 
+
+const title = ref('');
+const lande = ref('');
+const varighed = ref('');
+
+
+onMounted(async () => {
+  try {
+    // Fetch document from 'historieTitel' collection
+    const docRef = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+      title.value = docSnap.data().titelKina;
+    } else {
+      console.log('No such document in historieTitel collection!');
+      title.value = 'Document not found';
+    }
+
+    // Fetch document from 'lande' collection
+    const docRef2 = doc(db, 'Lande', '4BiWlzlz2Fmp743jJC59');
+    const docSnap2 = await getDoc(docRef2);
+    
+    if (docSnap2.exists()) {
+      lande.value = docSnap2.data().Land;
+    } else {
+      console.log('No such document in lande collection!');
+      lande.value = 'Document not found';
+    }
+
+  } catch (error) {
+    console.error('Error fetching document:', error);
+    title.value = 'Error fetching data';
+    lande.value = 'Error fetching data. Check console for details.';
+  }
+
+  try {
+    // Fetch document from 'audioVarighed' collection
+    const docRef3 = doc(db, 'audioVarighed', 'OJhrUUo7Lwtbazdy8StJ');
+    const docSnap3 = await getDoc(docRef3);
+    
+    if (docSnap3.exists()) {
+      varighed.value = docSnap3.data().varighedKina;
+    } else {
+      console.log('No such document in audioVarighed collection!');
+      varighed.value = 'Document not found';
+    }
+
+  } catch (error) {
+    console.error('Error fetching document:', error);
+    varighed.value = 'Error fetching data. Check console for details.';
+  }
+})
+
+
+</script>
 
 <style scoped>
 .map-container {

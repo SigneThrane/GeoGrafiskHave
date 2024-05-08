@@ -8,9 +8,6 @@ import './registerServiceWorker'
 import { createI18n, useI18n } from 'vue-i18n'
 import { ref } from 'vue'
 
-
-
-
 // Registering service worker if supported by the browser
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
