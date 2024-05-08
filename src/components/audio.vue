@@ -43,77 +43,77 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
+import { onMounted } from 'vue';
 
-import { useI18n } from 'vue-i18n'
+const i18n = useI18n({});
+const { t: $t } = i18n;
 
-const i18n = useI18n({})
-const { t: $t } = i18n
-
-document.addEventListener('DOMContentLoaded', function() {
+onMounted(() => {
   const audioPlayer = document.getElementById('audioPlayer');
   const playPauseButton = document.getElementById('playPauseButton');
+  const pauseIcon = document.getElementById('pauseIcon');
+  const playIcon = document.getElementById('playIcon');
   const skipBackButton = document.getElementById('skipBackButton');
   const skipForwardButton = document.getElementById('skipForwardButton');
   const speedButton = document.getElementById('speedButton');
-  const textButton = document.getElementById('textButton');
   const progressBar = document.getElementById('progressBar');
-  const currentTimeSpan = document.getElementById('currentTime');
-  const durationSpan = document.getElementById('duration');
 
   let isPlaying = false;
-  let currentSpeedIndex = 0;
-  const playbackSpeeds = [1.0]; 
+  let isNormalSpeed = true;
 
-  function togglePlayPause() {
-  if (isPlaying) {
-    audioPlayer.pause();
-    document.getElementById('playIcon').style.display = 'inline-block';
-    document.getElementById('pauseIcon').style.display = 'none';
-  } else {
-    audioPlayer.play();
-    document.getElementById('playIcon').style.display = 'none';
-    document.getElementById('pauseIcon').style.display = 'inline-block';
-  }
-  isPlaying = !isPlaying;
-}
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      audioPlayer.pause();
+      playIcon.style.display = 'inline-block';
+      pauseIcon.style.display = 'none';
+    } else {
+      audioPlayer.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'inline-block';
+    }
+    isPlaying = !isPlaying;
+  };
 
-function changeSpeed() {
-  currentSpeedIndex = (currentSpeedIndex + 1) % playbackSpeeds.length;
-  audioPlayer.playbackRate = playbackSpeeds[currentSpeedIndex];
-  speedButton.textContent = ''; 
-}
+  const toggleSpeed = () => {
+    if (isNormalSpeed) {
+      audioPlayer.playbackRate = 1.5; 
+      speedButton.textContent = '1.5x';
+    } else {
+      audioPlayer.playbackRate = 1.0; 
+      speedButton.textContent = '1x'; 
+    }
+    isNormalSpeed = !isNormalSpeed;
+    
+    speedButton.style.backgroundImage = 'none';
 
+    speedButton.style.fontSize = '19px'; 
+  };
 
-audioPlayer.addEventListener('timeupdate', function() {
-  if (!isNaN(audioPlayer.duration)) {
+  const updateProgressBar = () => {
     const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-    progressBar.style.width = progress + '%';
-
-    const currentTimeFormatted = formatTime(audioPlayer.currentTime);
-    currentTimeSpan.textContent = currentTimeFormatted;
-
-    const durationFormatted = formatTime(audioPlayer.duration);
-    durationSpan.textContent = durationFormatted;
-  }
-});
-
-  function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-  }
+    progressBar.style.width = `${progress}%`;
+    console.log('Progress updated:', progress);
+  };
 
   playPauseButton.addEventListener('click', togglePlayPause);
   skipBackButton.addEventListener('click', () => {
-    audioPlayer.currentTime -= 15; 
+    audioPlayer.currentTime -= 15;
   });
   skipForwardButton.addEventListener('click', () => {
-    audioPlayer.currentTime += 30; 
+    audioPlayer.currentTime += 30;
   });
-  speedButton.addEventListener('click', changeSpeed);
-});
+  speedButton.addEventListener('click', toggleSpeed);
 
+  speedButton.style.display = 'inline-block';
+
+  audioPlayer.addEventListener('timeupdate', updateProgressBar);
+  audioPlayer.addEventListener('play', updateProgressBar);
+
+  togglePlayPause();
+});
 </script>
+
 
 <style scoped>
 .audio-container {
