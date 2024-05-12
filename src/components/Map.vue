@@ -288,8 +288,34 @@ margin-right: 10%;
       .popUp {
   height: 21%;
   width: 87%;
-  margin-top: 32%;
 }
-    }
+
+.popUp h2 {
+  top: -80px; 
+  font-size: x-large;
+}
+
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 20%; 
+}
+
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
+#kina {
+margin-top: -1%;
+margin-right: 10%;
+}
+
+.icon-button-play {
+  top: 49%;
+}
+
+    }  
 </style>
 

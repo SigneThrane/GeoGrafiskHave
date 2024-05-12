@@ -151,8 +151,21 @@ img{
   background-size: 55%; 
 }
 .text-overlay h2 {
-  margin-bottom: 15px;
-  margin-top: 35%;
+  margin-top: 60%;
+  margin-bottom: 1px;
 }
+
+.scrollable-content {
+  max-height: 84vh; 
+  overflow-y: auto;
+  margin-bottom: 45%;
+}
+
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 40%; 
+}
+
 }
 </style>

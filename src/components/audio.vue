@@ -287,11 +287,9 @@ img{
   height: 70%;
 }
 .back-button {
-  top: 15px; 
-  left: 20px; 
-  height: 5%;
-  width: 9%;
-  background-size: 25%; 
+  height: 38px;
+  width: 38px;
+  background-size: 20%; 
 }
 
 .icon-button-forward{

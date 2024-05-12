@@ -159,9 +159,8 @@ const getLocation = () => {
   
 }
 
-
 .small-button1, .small-button2 {
-    margin: 0 30px;  /* This adds 10px of space to the left and right of each button */
+    margin: 0 30px;  
     color: white;
     background-color: transparent;
     border-color: white; 
@@ -212,13 +211,20 @@ and (max-width: 400px)
 { 
   .centered-image {
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 30%;
+    width: 34%;
     height: 16%;
     
   }
+
+  .small-button1, .small-button2 {
+    margin: 0 10px;  
+    height: 40px;
+    border-radius: 50px;
+    width: 120px; 
+}
 }
   </style>
