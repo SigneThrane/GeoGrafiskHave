@@ -315,7 +315,28 @@ margin-right: 10%;
 .icon-button-play {
   top: 49%;
 }
-
     }  
+
+    /* Laptops */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+  .popUp {
+  padding: 35px; 
+  height: 20%;
+  width: 95.2%;
+}
+
+.icon-button-play {
+  top: 40%;
+}
+
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 15%; 
+}
+
+}
 </style>
 

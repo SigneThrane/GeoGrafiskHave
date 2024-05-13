@@ -328,4 +328,48 @@ margin-top: -70px;
   margin-top: -25px; 
 }
 }
+
+    /* Laptops */
+    @media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+      .back-button {
+  top: 14px; 
+  left: 14px; 
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  background-size: 25%; 
+}
+
+.audio-container {
+  height: 100vh;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+img{
+  height: 70%;
+}
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 15%; 
+}
+
+p {
+  margin-bottom: 10%; 
+  margin-top: -7%;
+}
+
+h1 {
+  margin-top: -9%; 
+}
+
+#progressBar {
+  margin-top: -6%;
+}
+}
 </style>

@@ -181,6 +181,7 @@ const getLocation = () => {
  margin-left: 8%;
 }
 
+/* mobile */
 @media only screen
 and (min-width: 1370px)
 and (max-width: 1605px)
@@ -226,5 +227,15 @@ and (max-width: 400px)
     border-radius: 50px;
     width: 120px; 
 }
+}
+
+/* Laptops */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+.centered-image {
+    top: 29%;
+    width: 11%;
+    height: 20%;
+  }
+
 }
   </style>

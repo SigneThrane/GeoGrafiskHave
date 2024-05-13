@@ -168,4 +168,16 @@ img{
 }
 
 }
+
+  /* Laptops */
+  @media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+    .back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 30%; 
+}
+
+}
 </style>
