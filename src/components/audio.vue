@@ -1,55 +1,49 @@
 <template>
-<div class="locale.changer"> 
-  <div class="audio-container">
-    <router-link to="/map">
-      <button class="back-button"> </button>
-    </router-link>
-    <img src="../assets/featured.png" alt="">
-    <p>{{ $t('Kina') }}</p>
-    <h1>{{ $t('title2') }}</h1>
+  <div class="locale.changer"> 
+    <div class="audio-container">
+      <router-link to="/map">
+        <button class="back-button"> </button>
+      </router-link>
+      <img src="../assets/featured.png" alt="">
+      <p>{{ $t('Kina') }}</p>
+      <h1>{{ $t('title2') }}</h1>
 
-    <div class="audio">
-  <audio id="audioPlayer" src="/src/assets/Geografisk Have - Kina - DA.mp3"></audio>
-  <div class="progress">
-    <div id="progressBar"></div>
+      <div class="audio">
+        <audio id="audioPlayer"></audio>
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
+        <div class="time-info">
+          <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+        </div>
+        <div class="controls">
+          <button id="speedButton" class="icon-button-speed"></button>
+          <button id="skipBackButton" class="icon-button-back"></button>
+          <button id="playPauseButton" class="icon-button-play">
+            <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
+              <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+            </svg>
+          </button>
+          <button id="skipForwardButton" class="icon-button-forward"></button>
+          <router-link to="/audioTekst">
+            <button id="textButton" class="icon-button-text"></button>
+          </router-link>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="time-info">
-    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-  </div>
-  <div class="controls">
-    <button id="speedButton" class="icon-button-speed"></button>
-
-    <button id="skipBackButton" class="icon-button-back"></button>
-
-    <button id="playPauseButton" class="icon-button-play">
-  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16" id="playIcon">
-    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
-  </svg>
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16" id="pauseIcon" style="display: none;">
-    <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
-  </svg>
-</button>
-
-    <button id="skipForwardButton" class="icon-button-forward"></button>
-
-    <router-link to="/audioTekst">
-      <button id="textButton" class="icon-button-text"></button>
-    </router-link>
-  </div>
-</div>
-  </div>
-</div>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
 import { onMounted } from 'vue';
+import { getStorage, ref as storageRef, getDownloadURL } from 'firebase/storage';
 
-const i18n = useI18n({});
-const { t: $t } = i18n;
+const storage = getStorage();
 
-onMounted(() => {
+onMounted(async () => {
   const audioPlayer = document.getElementById('audioPlayer');
   const playPauseButton = document.getElementById('playPauseButton');
   const pauseIcon = document.getElementById('pauseIcon');
@@ -86,7 +80,6 @@ onMounted(() => {
     isNormalSpeed = !isNormalSpeed;
     
     speedButton.style.backgroundImage = 'none';
-
     speedButton.style.fontSize = '19px'; 
   };
 
@@ -109,6 +102,14 @@ onMounted(() => {
 
   audioPlayer.addEventListener('timeupdate', updateProgressBar);
   audioPlayer.addEventListener('play', updateProgressBar);
+
+  try {
+    const audioRef = storageRef(storage, 'kina.mp3'); 
+    const url = await getDownloadURL(audioRef);
+    audioPlayer.src = url;
+  } catch (error) {
+    console.error('Error fetching audio:', error);
+  }
 
   togglePlayPause();
 });

@@ -41,8 +41,8 @@
 import { onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import * as L from "leaflet";
-
 import logoUrl from "../assets/logo.png";
+import { doc, getDoc } from 'firebase/firestore'; 
 
 const { t: $t } = useI18n();
 
@@ -70,15 +70,14 @@ onMounted(() => {
     popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
 
-
-
-  // Create a custom marker with a clickable area
-  const markerIcon = L.divIcon({
+    // Create a custom marker with a clickable area
+    const markerIcon = L.divIcon({
     className: "custom-marker",
     html: `<div id="marker-background"></div><img src="${logoUrl}" style="width: 60px; height: 62px;"/></div>`,
     iconAnchor: [5, 3], // Adjust anchor position as needed
     icon: logo, // Use the custom icon
   });
+
 
   const marker = L.marker([initCoords.lat, initCoords.lng], {
     icon: markerIcon,
@@ -89,6 +88,62 @@ onMounted(() => {
     showCustomPopup.value = true;
   });
 });
+
+
+
+const title = ref('');
+const lande = ref('');
+const varighed = ref('');
+
+
+onMounted(async () => {
+  try {
+    // Fetch document from 'historieTitel' collection
+    const docRef = doc(db, 'historieTitel', '9uFrlduAUavrtX4pxmju');
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+      title.value = docSnap.data().titelKina;
+    } else {
+      console.log('No such document in historieTitel collection!');
+      title.value = 'Document not found';
+    }
+
+    // Fetch document from 'lande' collection
+    const docRef2 = doc(db, 'Lande', '4BiWlzlz2Fmp743jJC59');
+    const docSnap2 = await getDoc(docRef2);
+    
+    if (docSnap2.exists()) {
+      lande.value = docSnap2.data().Land;
+    } else {
+      console.log('No such document in lande collection!');
+      lande.value = 'Document not found';
+    }
+
+  } catch (error) {
+    console.error('Error fetching document:', error);
+    title.value = 'Error fetching data';
+    lande.value = 'Error fetching data. Check console for details.';
+  }
+
+  try {
+    // Fetch document from 'audioVarighed' collection
+    const docRef3 = doc(db, 'audioVarighed', 'OJhrUUo7Lwtbazdy8StJ');
+    const docSnap3 = await getDoc(docRef3);
+    
+    if (docSnap3.exists()) {
+      varighed.value = docSnap3.data().varighedKina;
+    } else {
+      console.log('No such document in audioVarighed collection!');
+      varighed.value = 'Document not found';
+    }
+
+  } catch (error) {
+    console.error('Error fetching document:', error);
+    varighed.value = 'Error fetching data. Check console for details.';
+  }
+})
+
 </script>
 
 <style scoped>

@@ -20,7 +20,7 @@ export default {
 
 <template>
   <div>
-  <RouterLink to="/forside" style="display: none;"></RouterLink>
+  <RouterLink to="/" style="display: none;"></RouterLink>
   <RouterLink to="/audio" style="display: none;"></RouterLink>
   <RouterLink to="/audioTekst" style="display: none;"></RouterLink>
   <RouterLink to="/Map" style="display: none;"></RouterLink>
