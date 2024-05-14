@@ -159,9 +159,8 @@ const getLocation = () => {
   
 }
 
-
 .small-button1, .small-button2 {
-    margin: 0 30px;  /* This adds 10px of space to the left and right of each button */
+    margin: 0 30px;  
     color: white;
     background-color: transparent;
     border-color: white; 
@@ -182,6 +181,7 @@ const getLocation = () => {
  margin-left: 8%;
 }
 
+/* mobile */
 @media only screen
 and (min-width: 1370px)
 and (max-width: 1605px)
@@ -212,13 +212,48 @@ and (max-width: 400px)
 { 
   .centered-image {
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 30%;
+    width: 34%;
+    height: 16%;
+    
+  }
+
+  .small-button1, .small-button2 {
+    margin: 0 10px;  
+    height: 40px;
+    border-radius: 50px;
+    width: 120px; 
+}
+}
+
+/* Laptops */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+.centered-image {
+    top: 29%;
+    width: 11%;
+    height: 20%;
+  }
+
+}
+
+@media only screen
+  and (device-width: 414px)
+  and (device-height: 922px) 
+
+{
+  .centered-image {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 33.5%;
     height: 16%;
     
   }
 }
+
   </style>
