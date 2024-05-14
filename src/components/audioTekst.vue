@@ -151,8 +151,33 @@ img{
   background-size: 55%; 
 }
 .text-overlay h2 {
-  margin-bottom: 15px;
-  margin-top: 35%;
+  margin-top: 60%;
+  margin-bottom: 1px;
 }
+
+.scrollable-content {
+  max-height: 84vh; 
+  overflow-y: auto;
+  margin-bottom: 45%;
+}
+
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 40%; 
+}
+
+}
+
+  /* Laptops */
+  @media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+    .back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 30%; 
+}
+
 }
 </style>

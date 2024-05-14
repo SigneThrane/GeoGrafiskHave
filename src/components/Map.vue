@@ -1,7 +1,7 @@
 <template>
   <!-- Map container -->
   <div class="map-container">
-    <div id="map" style="height: 90vh"></div>
+    <div id="map" style="height: 100vh"></div>
     <router-link to="/">
       <button class="back-button"></button>
     </router-link>
@@ -274,5 +274,128 @@ p {
   background-size: 25%;
 }
 
+
+@media only screen
+and (min-width: 1370px)
+and (max-width: 1605px)
+{ 
+  .popUp {
+  height: 20%;
+  width: 100%;
+}
+.popup-img {
+  top: -60%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%; 
+  border-radius: 10px; 
+}
+.popUp h2 {
+  top: -305%; 
+  left: 36%;
+}
+
+.map img {
+  transform: scale(1.7) translateX(1%);
+}
+
+#kina {
+  width: 2.5%;
+  right: 37%;
+}
+
+#varighed {
+  left: 34.5%;; 
+}
+
+.popup-info {
+  top: -412%; 
+}
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+}
+
+@media only screen
+and (min-width: 200px)
+and (max-width: 400px)
+{ 
+  .popUp {
+  height: 25%;
+  width: 87%;
+}
+
+#kina {
+margin-top: 5%;
+margin-right: 10%;
+}
+
+.icon-button-play {
+  top: 45%;
+}
+
+.popUp h2 { 
+  font-size: 30px;
+}
+}
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+      .popUp {
+  height: 21%;
+  width: 87%;
+}
+
+.popUp h2 {
+  top: -80px; 
+  font-size: x-large;
+}
+
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 20%; 
+}
+
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
+#kina {
+margin-top: -1%;
+margin-right: 10%;
+}
+
+.icon-button-play {
+  top: 49%;
+}
+    }  
+
+    /* Laptops */
+@media only screen and (min-width: 1280px) and (max-width: 1440px) { 
+  .popUp {
+  padding: 35px; 
+  height: 20%;
+  width: 95.2%;
+}
+
+.icon-button-play {
+  top: 40%;
+}
+
+.back-button {
+  top: 15px; 
+  left: 20px; 
+  height: 7%;
+  width: 4%;
+  background-size: 15%; 
+}
+
+}
 
 </style>
