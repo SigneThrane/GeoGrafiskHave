@@ -1,7 +1,7 @@
 <template>
   <!-- Map container -->
   <div class="map-container">
-    <div id="map" style="height: 100vh"></div>
+    <div id="map" style="height: 90vh"></div>
     <router-link to="/">
       <button class="back-button"></button>
     </router-link>
