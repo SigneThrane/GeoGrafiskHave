@@ -206,6 +206,7 @@ and (max-width: 1605px)
   }
 }
 
+/* Small mobile */
 @media only screen
 and (min-width: 300px)
 and (max-width: 400px)
@@ -238,21 +239,26 @@ and (max-width: 400px)
   }
 
 }
+@media only screen and (device-width: 1440px) and (device-height: 3200px) and (-webkit-device-pixel-ratio: 3) 
+    /* Din CSS-regler her for Samsung Galaxy S22 Ultra */
+{ 
+  .container {
+    height: 100vh;
+  }
 
-@media only screen
-  and (device-width: 414px)
-  and (device-height: 922px) 
-
-{
   .centered-image {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 33.5%;
-    height: 16%;
-    
+    width: 15%;
+    height: 26%;
+
+  }
+
+  .container {
+    height: 100vh;
   }
 }
 
