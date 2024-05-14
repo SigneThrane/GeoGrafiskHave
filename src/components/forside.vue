@@ -238,4 +238,22 @@ and (max-width: 400px)
   }
 
 }
+
+@media only screen
+  and (device-width: 414px)
+  and (device-height: 922px) 
+
+{
+  .centered-image {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 33.5%;
+    height: 16%;
+    
+  }
+}
+
   </style>
