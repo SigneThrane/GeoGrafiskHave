@@ -262,26 +262,8 @@ h1, p {
   opacity: 50%;
 }
 
-@media only screen
-and (min-width: 1370px)
-and (max-width: 1605px)
-{ 
-img{
-  height: 70%;
-}
-.back-button {
-  top: 15px; 
-  left: 20px; 
-  height: 7%;
-  width: 4%;
-  background-size: 15%; 
-}
-
-}
-
-@media only screen
-and (min-width: 300px)
-and (max-width: 400px)
+/* Small mobile */
+@media only screen and (max-width: 767px)
 { 
 img{
   height: 70%;
@@ -370,6 +352,57 @@ h1 {
 
 #progressBar {
   margin-top: -6%;
+}
+
+}
+
+
+/* For Samsung Galaxy S22 Ultra */
+@media only screen and (min-width: 768px)
+{ 
+img{
+  height: 60%;
+}
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 20%; 
+}
+
+.icon-button-forward{
+  background-size: 26px; 
+}
+
+.icon-button-back{
+  background-size: 30px; 
+}
+
+.icon-button-speed { 
+  background-size: 30px; 
+}
+
+.icon-button-text {
+  background-size: 18px; 
+}
+
+h1 {
+margin-top: -70px;
+  font-size: 25px;
+}
+
+.icon-button-text,
+.icon-button-forward,
+.icon-button-back,
+.icon-button-speed,
+.icon-button-play {
+  padding: 10px 17px;
+  background-color: RGB(52 51 51);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-top: -25px; 
 }
 }
 </style>

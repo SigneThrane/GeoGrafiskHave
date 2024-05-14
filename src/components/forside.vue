@@ -104,8 +104,8 @@ const getLocation = () => {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 34.5%;
-    height: 16%;
+    width: 50%;
+    height: 23%;
     
   }
 
@@ -159,8 +159,9 @@ const getLocation = () => {
   
 }
 
+
 .small-button1, .small-button2 {
-    margin: 0 30px;  
+    margin: 0 30px;  /* This adds 10px of space to the left and right of each button */
     color: white;
     background-color: transparent;
     border-color: white; 
@@ -181,55 +182,6 @@ const getLocation = () => {
  margin-left: 8%;
 }
 
-/* mobile */
-@media only screen
-and (min-width: 1370px)
-and (max-width: 1605px)
-{ 
-  .container {
-    height: 100vh;
-  }
-
-  .centered-image {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 15%;
-    height: 26%;
-    
-  }
-
-  .container {
-    height: 100vh;
-  }
-}
-
-/* Small mobile */
-@media only screen
-and (min-width: 300px)
-and (max-width: 400px)
-{ 
-  .centered-image {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 34%;
-    height: 16%;
-    
-  }
-
-  .small-button1, .small-button2 {
-    margin: 0 10px;  
-    height: 40px;
-    border-radius: 50px;
-    width: 120px; 
-}
-}
-
 /* Laptops */
 @media only screen and (min-width: 1280px) and (max-width: 1440px) { 
 .centered-image {
@@ -239,27 +191,44 @@ and (max-width: 400px)
   }
 
 }
-@media only screen and (device-width: 1440px) and (device-height: 3200px) and (-webkit-device-pixel-ratio: 3) 
-    /* Din CSS-regler her for Samsung Galaxy S22 Ultra */
-{ 
-  .container {
-    height: 100vh;
-  }
 
+/* Small mobile */
+@media only screen and (max-width: 767px)
+{ 
   .centered-image {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
-    width: 15%;
-    height: 26%;
-
+    width: 30%;
+    height: 15%;
+    
   }
-
-  .container {
-    height: 100vh;
-  }
+  .small-button1, .small-button2 {
+    margin: 0 10px;
+    height: 40px;
+    border-radius: 50px;
+    width: 120px; 
+}
 }
 
-  </style>
+ /* For Samsung Galaxy S22 Ultra */
+ @media only screen and (min-width: 768px) {
+  .centered-image {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 30%;
+    height: 15%;   
+  }
+  .small-button1, .small-button2 {
+    margin: 0 10px;
+    height: 40px;
+    border-radius: 50px;
+    width: 120px; 
+}
+}
+</style>

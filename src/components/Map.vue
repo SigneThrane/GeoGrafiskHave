@@ -19,6 +19,7 @@
               fill="white"
               class="bi bi-play-fill"
               viewBox="0 0 16 16"
+              
               id="playIcon"
             >
               <path
@@ -152,7 +153,7 @@ onMounted(async () => {
   position: fixed;
   bottom: 0;
   background-color: #343333;
-  padding: 25px;
+  padding: 30px;
   color: #ffffff;
   height: 20%;
   width: 89%;
@@ -210,9 +211,9 @@ p {
 
 .icon-button-play {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
-  transform: translate(-45%, -250%);
+  transform: translate(-45%, -280%);
   z-index: 2;
   cursor: pointer;
   background-color: #125f31;
@@ -261,7 +262,7 @@ p {
 .back-button {
   position: absolute;
   top: 14px;
-  left: 14px;
+  left: 50px;
   background-color: #404040;
   border: none;
   border-radius: 50%;
@@ -272,79 +273,16 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25%;
+  z-index: 1001;
+  
 }
 
-
-@media only screen
-and (min-width: 1370px)
-and (max-width: 1605px)
-{ 
-  .popUp {
-  height: 20%;
-  width: 100%;
-}
-.popup-img {
-  top: -60%; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 18%; 
-  border-radius: 10px; 
-}
-.popUp h2 {
-  top: -305%; 
-  left: 36%;
+.leaflet-control-container {
+  display: none !important;
 }
 
-.map img {
-  transform: scale(1.7) translateX(1%);
-}
-
-#kina {
-  width: 2.5%;
-  right: 37%;
-}
-
-#varighed {
-  left: 34.5%;; 
-}
-
-.popup-info {
-  top: -412%; 
-}
-.map {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-}
-
-@media only screen
-and (min-width: 200px)
-and (max-width: 400px)
-{ 
-  .popUp {
-  height: 25%;
-  width: 87%;
-}
-
-#kina {
-margin-top: 5%;
-margin-right: 10%;
-}
-
-.icon-button-play {
-  top: 45%;
-}
-
-.popUp h2 { 
-  font-size: 30px;
-}
-}
-
-@media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-      .popUp {
+@media only screen and (max-width: 767px){ 
+.popUp {
   height: 21%;
   width: 87%;
 }
@@ -374,7 +312,7 @@ margin-right: 10%;
 .icon-button-play {
   top: 49%;
 }
-    }  
+    }
 
     /* Laptops */
 @media only screen and (min-width: 1280px) and (max-width: 1440px) { 
@@ -395,7 +333,69 @@ margin-right: 10%;
   width: 4%;
   background-size: 15%; 
 }
+.popup-img {
+  top: -60%; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%; 
+  border-radius: 10px; 
+}
+.popUp h2 {
+  top: -305%; 
+  left: 36%;
+}
+
+#kina {
+  width: 2.5%;
+  right: 37%;
+}
+
+#varighed {
+  left: 34.5%;; 
+}
+
+.popup-info {
+  top: -412%; 
+}
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 
 }
 
+
+/* For Samsung Galaxy S22 Ultra */
+@media only screen and (min-width: 768px) { 
+.popUp {
+  height: 25%;
+  width: 100%;
+}
+
+.popUp h2 {
+  top: -80px; 
+  font-size: x-large;
+}
+
+.back-button {
+  height: 38px;
+  width: 38px;
+  background-size: 20%; 
+}
+
+.map {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
+#kina {
+margin-top: -1%;
+margin-right: 10%;
+}
+
+.icon-button-play {
+  top: 49%;
+}
+    }
 </style>
