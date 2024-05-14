@@ -26,6 +26,8 @@ const getLocation = () => {
   }  
 }
 
+
+
 </script>
 
 <template>   
@@ -42,6 +44,7 @@ const getLocation = () => {
        
         <RouterLink to="/map">
         <button class="big-button" @click="getLocation">{{ $t('Continue') }}</button>
+        
         </RouterLink>
 
         <div class="small-buttons">
